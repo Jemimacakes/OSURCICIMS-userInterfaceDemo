@@ -17,7 +17,7 @@ func main()
     var touchState;
     var buttonState;
 
-    var incrementBy := 0;
+    var incrementBy := 1;
     var count := 0;
 
     gfx_ScreenMode(LANDSCAPE);
@@ -88,11 +88,11 @@ func main()
 
     // Leddigits1 1.0 generated 12/30/2016 2:00:45 PM
     img_Show(hndl, iLeddigits1);  // show all digits at 0, only do this once
-    ledDigitsDisplay(0, iLeddigits1+1, 155, 4, 1, 30, 0);
+    ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
 
     // Leddigits2 1.0 generated 12/30/2016 2:00:47 PM
     img_Show(hndl, iLeddigits2);  // show all digits at 0, only do this once
-    ledDigitsDisplay(0, iLeddigits2+1, 155, 4, 1, 30, 0);
+    ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
 
     // Statictext1 1.0 generated 12/30/2016 2:00:48 PM
     img_Show(hndl, iIncrementByText);
@@ -121,7 +121,7 @@ func main()
             if(buttonState == iIncDecButton)
                 img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iIncDecButton);
-                if(incrementBy != 0)
+                if(incrementBy != 1)
                     incrementBy--;
                 else
                     incrementBy := 10;
@@ -133,7 +133,7 @@ func main()
                 if(incrementBy != 10)
                     incrementBy++;
                 else
-                    incrementBy := 0;
+                    incrementBy := 1;
                 endif
             endif
             if(buttonState == iCountDecButton)
@@ -212,7 +212,7 @@ func main()
             if(buttonState == iIncDecButton)
                 img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iIncDecButton);
-                if(incrementBy != 0)
+                if(incrementBy != 1)
                     incrementBy--;
                 else
                     incrementBy := 10;
@@ -227,7 +227,7 @@ func main()
                 if(incrementBy != 10)
                     incrementBy++;
                 else
-                    incrementBy := 0;
+                    incrementBy := 1;
                 endif
             else
                 img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 0);

@@ -1,4 +1,4 @@
-file C:\Users\Jemim\Documents\GitHub\OSURCICIMS-userInterfaceDemo\userInterfaceDemo.4Dg
+file C:\Users\Jemim\Documents\GitHub\OSURCICIMS-userInterfaceDemo\userInterfaceDemo.4dg
 
 file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\uLCD-32PTU.fnc
 
@@ -2913,7 +2913,7 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\ledDigitsDisplay.i
 002899  000017      var touchState;
 002900  000018      var buttonState;
 002901  000019        
-002902  000020      var incrementBy := 0;
+002902  000020      var incrementBy := 1;
 002903  000021      var count := 0;
 002904  000022        
 002905  000023      gfx_ScreenMode(LANDSCAPE);
@@ -2984,11 +2984,11 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\ledDigitsDisplay.i
 002970  000088        
 002971  000089      // Leddigits1 1.0 generated 12/30/2016 2:00:45 PM
 002972  000090      img_Show(hndl, iLeddigits1);  // show all digits at 0, only do this once
-002973  000091      ledDigitsDisplay(0, iLeddigits1+1, 155, 4, 1, 30, 0);
+002973  000091      ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
 002974  000092        
 002975  000093      // Leddigits2 1.0 generated 12/30/2016 2:00:47 PM
 002976  000094      img_Show(hndl, iLeddigits2);  // show all digits at 0, only do this once
-002977  000095      ledDigitsDisplay(0, iLeddigits2+1, 155, 4, 1, 30, 0);
+002977  000095      ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
 002978  000096        
 002979  000097      // Statictext1 1.0 generated 12/30/2016 2:00:48 PM
 002980  000098      img_Show(hndl, iIncrementByText);
@@ -3017,7 +3017,7 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\ledDigitsDisplay.i
 003003  000121              if(buttonState == iIncDecButton)
 003004  000122                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
 003005  000123                  img_Show(hndl, iIncDecButton);
-003006  000124                  if(incrementBy != 0)
+003006  000124                  if(incrementBy != 1)
 003007  000125                      incrementBy--;
 003008  000126                  else
 003009  000127                      incrementBy := 10;
@@ -3029,7 +3029,7 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\ledDigitsDisplay.i
 003015  000133                  if(incrementBy != 10)
 003016  000134                      incrementBy++;
 003017  000135                  else
-003018  000136                      incrementBy := 0;
+003018  000136                      incrementBy := 1;
 003019  000137                  endif
 003020  000138              endif
 003021  000139              if(buttonState == iCountDecButton)
@@ -3108,7 +3108,7 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\ledDigitsDisplay.i
 003094  000212              if(buttonState == iIncDecButton)
 003095  000213                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
 003096  000214                  img_Show(hndl, iIncDecButton);
-003097  000215                  if(incrementBy != 0)
+003097  000215                  if(incrementBy != 1)
 003098  000216                      incrementBy--;
 003099  000217                  else
 003100  000218                      incrementBy := 10;
@@ -3123,7 +3123,7 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\ledDigitsDisplay.i
 003109  000227                  if(incrementBy != 10)
 003110  000228                      incrementBy++;
 003111  000229                  else
-003112  000230                      incrementBy := 0;
+003112  000230                      incrementBy := 1;
 003113  000231                  endif
 003114  000232              else
 003115  000233                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 0);
@@ -3289,7 +3289,7 @@ bus_Write                            -48  0xffffffd0 (PmmC func) args[1] r=0  (n
 BUTTON_DOWN                            0  0x00000000 (const dword)  (not used)
 BUTTON_UP                              1  0x00000001 (const dword)  (not used)
 ByteSwap                            -215  0xffffff29 (PmmC func) args[1] r=1  (not used)
-C:\Users\Jemim\Documents\GitHub\OSURCICIMS-userInterfaceDemo\userInterfaceDemo.4Dg    2805  0x00000af5 (const ??? 0)  (not used)
+C:\Users\Jemim\Documents\GitHub\OSURCICIMS-userInterfaceDemo\userInterfaceDemo.4dg    2805  0x00000af5 (const ??? 0)  (not used)
 CADETBLUE                          23796  0x00005cf4 (const dword)  (not used)
 charheight                          -159  0xffffff61 (PmmC func) args[1] r=1  (not used)
 CHARTREUSE                         32736  0x00007fe0 (const dword)  (not used)
