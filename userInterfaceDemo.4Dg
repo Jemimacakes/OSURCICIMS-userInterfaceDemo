@@ -95,10 +95,10 @@ func main()
     ledDigitsDisplay(0, iLeddigits2+1, 155, 4, 1, 30, 0);
 
     // Statictext1 1.0 generated 12/30/2016 2:00:48 PM
-    img_Show(hndl, iStatictext1);
+    img_Show(hndl, iIncrementByText);
 
     // Statictext2 1.0 generated 12/30/2016 2:00:50 PM
-    img_Show(hndl, iStatictext2);
+    img_Show(hndl, iCountText);
 
 
     repeat

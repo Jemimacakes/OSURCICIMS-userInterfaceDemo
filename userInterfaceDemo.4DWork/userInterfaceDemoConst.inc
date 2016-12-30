@@ -1,4 +1,4 @@
-// File generated 12/30/2016 3:06:02 PM
+// File generated 12/30/2016 3:15:24 PM
 // Warning! This is a generated file, any manual changes will be
 // lost during the next generation.
 
@@ -19,8 +19,8 @@
     iiLeddigits2    // offset 0x5B1E00
     iCountDecButton // offset 0x5B7200
     iCountIncButton // offset 0x5B8600
-    iStatictext1    // offset 0x5B9A00
-    iStatictext2    // offset 0x5BAA00
+    iIncrementByText // offset 0x5B9A00
+    iCountText      // offset 0x5BAA00
 #END
 
 #IFNOT EXISTS NOGLOBALS

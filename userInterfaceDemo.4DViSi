@@ -598,8 +598,8 @@ WinButton
     OnTouchReleased              ''
 end
 StaticText
-    Name                         Statictext1
-    Alias                        Statictext1
+    Name                         IncrementByText
+    Alias                        IncrementByText
     AutoSize                     Yes
     Caption                      'Increment By:'
     Color                        BLACK
@@ -616,8 +616,8 @@ StaticText
     WordWrap                     No
 end
 StaticText
-    Name                         Statictext2
-    Alias                        Statictext2
+    Name                         CountText
+    Alias                        CountText
     AutoSize                     Yes
     Caption                      Count:
     Color                        BLACK
