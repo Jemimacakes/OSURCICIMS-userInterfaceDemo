@@ -19,6 +19,7 @@ func main()
 
     var incrementBy := 1;
     var count := 0;
+    var counting := 0;
 
     gfx_ScreenMode(LANDSCAPE);
     touch_Set(TOUCH_ENABLE);
@@ -109,10 +110,12 @@ func main()
             if(buttonState == iStartButton)
                 img_SetWord(hndl, iStartButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iStartButton);
+                counting := 1;
             endif
             if(buttonState == iStopButton)
                 img_SetWord(hndl, iStopButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iStopButton);
+                counting := 0;
             endif
             if(buttonState == iTransmitButton)
                 img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
@@ -256,6 +259,13 @@ func main()
             else
                 img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iCountIncButton);
+            endif
+        endif
+
+        if(counting == 1)
+            count := count + incrementBy;
+            if(count > 100)
+                count := count - 100;
             endif
         endif
 

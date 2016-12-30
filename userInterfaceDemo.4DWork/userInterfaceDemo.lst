@@ -2864,7 +2864,7 @@ file C:\Users\Jemim\Documents\GitHub\OSURCICIMS-userInterfaceDemo\userInterfaceD
 
 002853  000009  #inherit "userInterfaceDemoConst.inc"
 002854  000009  #inherit "userInterfaceDemoConst.inc"
-002855  000001  // File generated 12/30/2016 3:15:24 PM
+002855  000001  // File generated 12/30/2016 3:29:49 PM
 002856  000002  // Warning! This is a generated file, any manual changes will be
 002857  000003  // lost during the next generation.
 002858  000004        
@@ -2915,260 +2915,270 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\ledDigitsDisplay.i
 002901  000019        
 002902  000020      var incrementBy := 1;
 002903  000021      var count := 0;
-002904  000022        
-002905  000023      gfx_ScreenMode(LANDSCAPE);
-002906  000024      touch_Set(TOUCH_ENABLE);
-002907  000025        
-002908  000026  //  Uncomment the following if uSD images, fonts or strings used.
-002909  000027        
-002910  000028      putstr("Mounting...");
-002911  000029      if (!(file_Mount()))
-002912  000030          while(!(file_Mount()))
-002913  000031          putstr("Drive not mounted...");
-002914  000032          pause(200);
-002915  000033          gfx_Cls();
-002916  000034          pause(200);
-002917  000035          wend
-002918  000036      endif
-002919  000037      gfx_Cls();
-002920  000038  //    gfx_TransparentColour(0x0020);    // uncomment if transparency required
-002921  000039  //    gfx_Transparency(ON);             // uncomment if transparency required
-002922  000040        
-002923  000041  //  hFontn := file_LoadImageControl("USERIN~1.dan", "USERIN~1.gcn", 1); // Open handle to access uSD fonts, uncomment if required and change n to font number dropping a and c if > 9
-002924  000042  //  hstrings := file_Open("USERIN~1.txf", 'r'); // Open handle to access uSD strings, uncomment if required
-002925  000043      hndl := file_LoadImageControl("USERIN~1.dat", "USERIN~1.gci", 1);
-002926  000044        
-002927  000045      // StartButton 1.0 generated 12/30/2016 12:40:26 PM
-002928  000046      img_ClearAttributes(hndl, iStartButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-002929  000047      img_Show(hndl, iStartButton);  // show button, only do this once
-002930  000048        
-002931  000049      // StopButton 1.0 generated 12/30/2016 12:40:27 PM
-002932  000050      img_ClearAttributes(hndl, iStopButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-002933  000051      img_Show(hndl, iStopButton);  // show button, only do this once
-002934  000052        
-002935  000053      // TransmitButton 1.0 generated 12/30/2016 12:40:29 PM
-002936  000054      img_ClearAttributes(hndl, iTransmitButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-002937  000055      img_Show(hndl, iTransmitButton);  // show button, only do this once
-002938  000056        
-002939  000057      // IncDecButton 1.0 generated 12/30/2016 12:40:30 PM
-002940  000058      img_ClearAttributes(hndl, iIncDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-002941  000059      img_Show(hndl, iIncDecButton);  // show button, only do this once
-002942  000060        
-002943  000061      // IncIncButton 1.0 generated 12/30/2016 12:40:31 PM
-002944  000062      img_ClearAttributes(hndl, iIncIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-002945  000063      img_Show(hndl, iIncIncButton);  // show button, only do this once
-002946  000064        
-002947  000065      // CountDecButton 1.0 generated 12/30/2016 12:40:33 PM
-002948  000066      img_ClearAttributes(hndl, iCountDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-002949  000067      img_Show(hndl, iCountDecButton);  // show button, only do this once
-002950  000068        
-002951  000069      // CountIncButton 1.0 generated 12/30/2016 12:40:34 PM
-002952  000070      img_ClearAttributes(hndl, iCountIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-002953  000071      img_Show(hndl, iCountIncButton);  // show button, only do this once
-002954  000072        
-002955  000073      // CountMeter 1.0 generated 12/30/2016 2:00:33 PM
-002956  000074      img_SetWord(hndl, iCountMeter, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
-002957  000075      img_Show(hndl, iCountMeter);
-002958  000076        
-002959  000077      // CountGauge1 1.0 generated 12/30/2016 2:25:16 PM
-002960  000078      img_SetWord(hndl, iCountGauge1, IMAGE_INDEX, 0) ; // where frame is 0 to 100 (for a displayed 0 to 100)
-002961  000079      img_Show(hndl, iCountGauge1) ;
-002962  000080        
-002963  000081      // CountGauge2 1.0 generated 12/30/2016 2:00:38 PM
-002964  000082      img_SetWord(hndl, iCountGauge2, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
-002965  000083      img_Show(hndl, iCountGauge2);
-002966  000084        
-002967  000085      // CountGauge3 1.0 generated 12/30/2016 2:00:39 PM
-002968  000086      img_SetWord(hndl, iCountGauge3, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
-002969  000087      img_Show(hndl, iCountGauge3);
-002970  000088        
-002971  000089      // Leddigits1 1.0 generated 12/30/2016 2:00:45 PM
-002972  000090      img_Show(hndl, iLeddigits1);  // show all digits at 0, only do this once
-002973  000091      ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
-002974  000092        
-002975  000093      // Leddigits2 1.0 generated 12/30/2016 2:00:47 PM
-002976  000094      img_Show(hndl, iLeddigits2);  // show all digits at 0, only do this once
-002977  000095      ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
-002978  000096        
-002979  000097      // Statictext1 1.0 generated 12/30/2016 2:00:48 PM
-002980  000098      img_Show(hndl, iIncrementByText);
-002981  000099        
-002982  000100      // Statictext2 1.0 generated 12/30/2016 2:00:50 PM
-002983  000101      img_Show(hndl, iCountText);
-002984  000102        
+002904  000022      var counting := 0;
+002905  000023        
+002906  000024      gfx_ScreenMode(LANDSCAPE);
+002907  000025      touch_Set(TOUCH_ENABLE);
+002908  000026        
+002909  000027  //  Uncomment the following if uSD images, fonts or strings used.
+002910  000028        
+002911  000029      putstr("Mounting...");
+002912  000030      if (!(file_Mount()))
+002913  000031          while(!(file_Mount()))
+002914  000032          putstr("Drive not mounted...");
+002915  000033          pause(200);
+002916  000034          gfx_Cls();
+002917  000035          pause(200);
+002918  000036          wend
+002919  000037      endif
+002920  000038      gfx_Cls();
+002921  000039  //    gfx_TransparentColour(0x0020);    // uncomment if transparency required
+002922  000040  //    gfx_Transparency(ON);             // uncomment if transparency required
+002923  000041        
+002924  000042  //  hFontn := file_LoadImageControl("USERIN~1.dan", "USERIN~1.gcn", 1); // Open handle to access uSD fonts, uncomment if required and change n to font number dropping a and c if > 9
+002925  000043  //  hstrings := file_Open("USERIN~1.txf", 'r'); // Open handle to access uSD strings, uncomment if required
+002926  000044      hndl := file_LoadImageControl("USERIN~1.dat", "USERIN~1.gci", 1);
+002927  000045        
+002928  000046      // StartButton 1.0 generated 12/30/2016 12:40:26 PM
+002929  000047      img_ClearAttributes(hndl, iStartButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+002930  000048      img_Show(hndl, iStartButton);  // show button, only do this once
+002931  000049        
+002932  000050      // StopButton 1.0 generated 12/30/2016 12:40:27 PM
+002933  000051      img_ClearAttributes(hndl, iStopButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+002934  000052      img_Show(hndl, iStopButton);  // show button, only do this once
+002935  000053        
+002936  000054      // TransmitButton 1.0 generated 12/30/2016 12:40:29 PM
+002937  000055      img_ClearAttributes(hndl, iTransmitButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+002938  000056      img_Show(hndl, iTransmitButton);  // show button, only do this once
+002939  000057        
+002940  000058      // IncDecButton 1.0 generated 12/30/2016 12:40:30 PM
+002941  000059      img_ClearAttributes(hndl, iIncDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+002942  000060      img_Show(hndl, iIncDecButton);  // show button, only do this once
+002943  000061        
+002944  000062      // IncIncButton 1.0 generated 12/30/2016 12:40:31 PM
+002945  000063      img_ClearAttributes(hndl, iIncIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+002946  000064      img_Show(hndl, iIncIncButton);  // show button, only do this once
+002947  000065        
+002948  000066      // CountDecButton 1.0 generated 12/30/2016 12:40:33 PM
+002949  000067      img_ClearAttributes(hndl, iCountDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+002950  000068      img_Show(hndl, iCountDecButton);  // show button, only do this once
+002951  000069        
+002952  000070      // CountIncButton 1.0 generated 12/30/2016 12:40:34 PM
+002953  000071      img_ClearAttributes(hndl, iCountIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+002954  000072      img_Show(hndl, iCountIncButton);  // show button, only do this once
+002955  000073        
+002956  000074      // CountMeter 1.0 generated 12/30/2016 2:00:33 PM
+002957  000075      img_SetWord(hndl, iCountMeter, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
+002958  000076      img_Show(hndl, iCountMeter);
+002959  000077        
+002960  000078      // CountGauge1 1.0 generated 12/30/2016 2:25:16 PM
+002961  000079      img_SetWord(hndl, iCountGauge1, IMAGE_INDEX, 0) ; // where frame is 0 to 100 (for a displayed 0 to 100)
+002962  000080      img_Show(hndl, iCountGauge1) ;
+002963  000081        
+002964  000082      // CountGauge2 1.0 generated 12/30/2016 2:00:38 PM
+002965  000083      img_SetWord(hndl, iCountGauge2, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
+002966  000084      img_Show(hndl, iCountGauge2);
+002967  000085        
+002968  000086      // CountGauge3 1.0 generated 12/30/2016 2:00:39 PM
+002969  000087      img_SetWord(hndl, iCountGauge3, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
+002970  000088      img_Show(hndl, iCountGauge3);
+002971  000089        
+002972  000090      // Leddigits1 1.0 generated 12/30/2016 2:00:45 PM
+002973  000091      img_Show(hndl, iLeddigits1);  // show all digits at 0, only do this once
+002974  000092      ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
+002975  000093        
+002976  000094      // Leddigits2 1.0 generated 12/30/2016 2:00:47 PM
+002977  000095      img_Show(hndl, iLeddigits2);  // show all digits at 0, only do this once
+002978  000096      ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
+002979  000097        
+002980  000098      // Statictext1 1.0 generated 12/30/2016 2:00:48 PM
+002981  000099      img_Show(hndl, iIncrementByText);
+002982  000100        
+002983  000101      // Statictext2 1.0 generated 12/30/2016 2:00:50 PM
+002984  000102      img_Show(hndl, iCountText);
 002985  000103        
-002986  000104      repeat
-002987  000105          touchState := touch_Get(TOUCH_STATUS);
-002988  000106          buttonState := img_Touched(hndl, -1);
-002989  000107        
-002990  000108          if(touchState == TOUCH_PRESSED)
-002991  000109              if(buttonState == iStartButton)
-002992  000110                  img_SetWord(hndl, iStartButton, IMAGE_INDEX, 1);
-002993  000111                  img_Show(hndl, iStartButton);
-002994  000112              endif
-002995  000113              if(buttonState == iStopButton)
-002996  000114                  img_SetWord(hndl, iStopButton, IMAGE_INDEX, 1);
-002997  000115                  img_Show(hndl, iStopButton);
-002998  000116              endif
-002999  000117              if(buttonState == iTransmitButton)
-003000  000118                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
-003001  000119                  img_Show(hndl, iTransmitButton);
-003002  000120              endif
-003003  000121              if(buttonState == iIncDecButton)
-003004  000122                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
-003005  000123                  img_Show(hndl, iIncDecButton);
-003006  000124                  if(incrementBy != 1)
-003007  000125                      incrementBy--;
-003008  000126                  else
-003009  000127                      incrementBy := 10;
-003010  000128                  endif
-003011  000129              endif
-003012  000130              if(buttonState == iIncIncButton)
-003013  000131                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 1);
-003014  000132                  img_Show(hndl, iIncIncButton);
-003015  000133                  if(incrementBy != 10)
-003016  000134                      incrementBy++;
-003017  000135                  else
-003018  000136                      incrementBy := 1;
-003019  000137                  endif
-003020  000138              endif
-003021  000139              if(buttonState == iCountDecButton)
-003022  000140                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 1);
-003023  000141                  img_Show(hndl, iCountDecButton);
-003024  000142                  if(count != 0)
-003025  000143                      count--;
-003026  000144                  else
-003027  000145                      count := 100;
-003028  000146                  endif
-003029  000147              endif
-003030  000148              if(buttonState == iCountIncButton)
-003031  000149                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 1);
-003032  000150                  img_Show(hndl, iCountIncButton);
-003033  000151                  if(count != 100)
-003034  000152                      count++;
-003035  000153                  else
-003036  000154                      count := 0;
-003037  000155                  endif
-003038  000156              endif
-003039  000157          endif
-003040  000158        
-003041  000159          if(touchState == TOUCH_RELEASED)
-003042  000160              if(buttonState == iStartButton)
-003043  000161                  img_SetWord(hndl, iStartButton, IMAGE_INDEX, 0);
-003044  000162                  img_Show(hndl, iStartButton);
-003045  000163              endif
-003046  000164              if(buttonState == iStopButton)
-003047  000165                  img_SetWord(hndl, iStopButton, IMAGE_INDEX, 0);
-003048  000166                  img_Show(hndl, iStopButton);
-003049  000167              endif
-003050  000168              if(buttonState == iTransmitButton)
-003051  000169                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 0);
-003052  000170                  img_Show(hndl, iTransmitButton);
-003053  000171              endif
-003054  000172              if(buttonState == iIncDecButton)
-003055  000173                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 0);
-003056  000174                  img_Show(hndl, iIncDecButton);
-003057  000175              endif
-003058  000176              if(buttonState == iIncIncButton)
-003059  000177                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 0);
-003060  000178                  img_Show(hndl, iIncIncButton);
-003061  000179              endif
-003062  000180              if(buttonState == iCountDecButton)
-003063  000181                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 0);
-003064  000182                  img_Show(hndl, iCountDecButton);
-003065  000183              endif
-003066  000184              if(buttonState == iCountIncButton)
-003067  000185                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
-003068  000186                  img_Show(hndl, iCountIncButton);
-003069  000187              endif
-003070  000188          endif
-003071  000189        
-003072  000190          if(touchState == TOUCH_MOVING)
-003073  000191              if(buttonState == iStartButton)
-003074  000192                  img_SetWord(hndl, iStartButton, IMAGE_INDEX, 1);
-003075  000193                  img_Show(hndl, iStartButton);
-003076  000194              else
-003077  000195                  img_SetWord(hndl, iStartButton, IMAGE_INDEX, 0);
+002986  000104        
+002987  000105      repeat
+002988  000106          touchState := touch_Get(TOUCH_STATUS);
+002989  000107          buttonState := img_Touched(hndl, -1);
+002990  000108        
+002991  000109          if(touchState == TOUCH_PRESSED)
+002992  000110              if(buttonState == iStartButton)
+002993  000111                  img_SetWord(hndl, iStartButton, IMAGE_INDEX, 1);
+002994  000112                  img_Show(hndl, iStartButton);
+002995  000113                  counting := 1;
+002996  000114              endif
+002997  000115              if(buttonState == iStopButton)
+002998  000116                  img_SetWord(hndl, iStopButton, IMAGE_INDEX, 1);
+002999  000117                  img_Show(hndl, iStopButton);
+003000  000118                  counting := 0;
+003001  000119              endif
+003002  000120              if(buttonState == iTransmitButton)
+003003  000121                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
+003004  000122                  img_Show(hndl, iTransmitButton);
+003005  000123              endif
+003006  000124              if(buttonState == iIncDecButton)
+003007  000125                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
+003008  000126                  img_Show(hndl, iIncDecButton);
+003009  000127                  if(incrementBy != 1)
+003010  000128                      incrementBy--;
+003011  000129                  else
+003012  000130                      incrementBy := 10;
+003013  000131                  endif
+003014  000132              endif
+003015  000133              if(buttonState == iIncIncButton)
+003016  000134                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 1);
+003017  000135                  img_Show(hndl, iIncIncButton);
+003018  000136                  if(incrementBy != 10)
+003019  000137                      incrementBy++;
+003020  000138                  else
+003021  000139                      incrementBy := 1;
+003022  000140                  endif
+003023  000141              endif
+003024  000142              if(buttonState == iCountDecButton)
+003025  000143                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 1);
+003026  000144                  img_Show(hndl, iCountDecButton);
+003027  000145                  if(count != 0)
+003028  000146                      count--;
+003029  000147                  else
+003030  000148                      count := 100;
+003031  000149                  endif
+003032  000150              endif
+003033  000151              if(buttonState == iCountIncButton)
+003034  000152                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 1);
+003035  000153                  img_Show(hndl, iCountIncButton);
+003036  000154                  if(count != 100)
+003037  000155                      count++;
+003038  000156                  else
+003039  000157                      count := 0;
+003040  000158                  endif
+003041  000159              endif
+003042  000160          endif
+003043  000161        
+003044  000162          if(touchState == TOUCH_RELEASED)
+003045  000163              if(buttonState == iStartButton)
+003046  000164                  img_SetWord(hndl, iStartButton, IMAGE_INDEX, 0);
+003047  000165                  img_Show(hndl, iStartButton);
+003048  000166              endif
+003049  000167              if(buttonState == iStopButton)
+003050  000168                  img_SetWord(hndl, iStopButton, IMAGE_INDEX, 0);
+003051  000169                  img_Show(hndl, iStopButton);
+003052  000170              endif
+003053  000171              if(buttonState == iTransmitButton)
+003054  000172                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 0);
+003055  000173                  img_Show(hndl, iTransmitButton);
+003056  000174              endif
+003057  000175              if(buttonState == iIncDecButton)
+003058  000176                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 0);
+003059  000177                  img_Show(hndl, iIncDecButton);
+003060  000178              endif
+003061  000179              if(buttonState == iIncIncButton)
+003062  000180                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 0);
+003063  000181                  img_Show(hndl, iIncIncButton);
+003064  000182              endif
+003065  000183              if(buttonState == iCountDecButton)
+003066  000184                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 0);
+003067  000185                  img_Show(hndl, iCountDecButton);
+003068  000186              endif
+003069  000187              if(buttonState == iCountIncButton)
+003070  000188                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
+003071  000189                  img_Show(hndl, iCountIncButton);
+003072  000190              endif
+003073  000191          endif
+003074  000192        
+003075  000193          if(touchState == TOUCH_MOVING)
+003076  000194              if(buttonState == iStartButton)
+003077  000195                  img_SetWord(hndl, iStartButton, IMAGE_INDEX, 1);
 003078  000196                  img_Show(hndl, iStartButton);
-003079  000197              endif
-003080  000198              if(buttonState == iStopButton)
-003081  000199                  img_SetWord(hndl, iStopButton, IMAGE_INDEX, 1);
-003082  000200                  img_Show(hndl, iStopButton);
-003083  000201              else
-003084  000202                  img_SetWord(hndl, iStopButton, IMAGE_INDEX, 0);
+003079  000197              else
+003080  000198                  img_SetWord(hndl, iStartButton, IMAGE_INDEX, 0);
+003081  000199                  img_Show(hndl, iStartButton);
+003082  000200              endif
+003083  000201              if(buttonState == iStopButton)
+003084  000202                  img_SetWord(hndl, iStopButton, IMAGE_INDEX, 1);
 003085  000203                  img_Show(hndl, iStopButton);
-003086  000204              endif
-003087  000205              if(buttonState == iTransmitButton)
-003088  000206                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
-003089  000207                  img_Show(hndl, iTransmitButton);
-003090  000208              else
-003091  000209                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 0);
+003086  000204              else
+003087  000205                  img_SetWord(hndl, iStopButton, IMAGE_INDEX, 0);
+003088  000206                  img_Show(hndl, iStopButton);
+003089  000207              endif
+003090  000208              if(buttonState == iTransmitButton)
+003091  000209                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
 003092  000210                  img_Show(hndl, iTransmitButton);
-003093  000211              endif
-003094  000212              if(buttonState == iIncDecButton)
-003095  000213                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
-003096  000214                  img_Show(hndl, iIncDecButton);
-003097  000215                  if(incrementBy != 1)
-003098  000216                      incrementBy--;
-003099  000217                  else
-003100  000218                      incrementBy := 10;
-003101  000219                  endif
-003102  000220              else
-003103  000221                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 0);
-003104  000222                  img_Show(hndl, iIncDecButton);
-003105  000223              endif
-003106  000224              if(buttonState == iIncIncButton)
-003107  000225                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 1);
-003108  000226                  img_Show(hndl, iIncIncButton);
-003109  000227                  if(incrementBy != 10)
-003110  000228                      incrementBy++;
-003111  000229                  else
-003112  000230                      incrementBy := 1;
-003113  000231                  endif
-003114  000232              else
-003115  000233                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 0);
-003116  000234                  img_Show(hndl, iIncIncButton);
-003117  000235              endif
-003118  000236              if(buttonState == iCountDecButton)
-003119  000237                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 1);
-003120  000238                  img_Show(hndl, iCountDecButton);
-003121  000239                  if(count != 0)
-003122  000240                      count--;
-003123  000241                  else
-003124  000242                      count := 100;
-003125  000243                  endif
-003126  000244              else
-003127  000245                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 0);
-003128  000246                  img_Show(hndl, iCountDecButton);
-003129  000247              endif
-003130  000248              if(buttonState == iCountIncButton)
-003131  000249                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 1);
-003132  000250                  img_Show(hndl, iCountIncButton);
-003133  000251                  if(count != 100)
-003134  000252                      count++;
-003135  000253                  else
-003136  000254                      count := 0;
-003137  000255                  endif
-003138  000256              else
-003139  000257                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
-003140  000258                  img_Show(hndl, iCountIncButton);
-003141  000259              endif
-003142  000260          endif
-003143  000261        
-003144  000262          img_SetWord(hndl, iCountGauge1, IMAGE_INDEX, count);
-003145  000263          img_Show(hndl, iCountGauge1);
-003146  000264          img_SetWord(hndl, iCountGauge2, IMAGE_INDEX, count);
-003147  000265          img_Show(hndl, iCountGauge2);
-003148  000266          img_SetWord(hndl, iCountGauge3, IMAGE_INDEX, count);
-003149  000267          img_Show(hndl, iCountGauge3);
-003150  000268          img_SetWord(hndl, iCountMeter, IMAGE_INDEX, count);
-003151  000269          img_Show(hndl, iCountMeter);
-003152  000270        
-003153  000271          ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
-003154  000272          ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
-003155  000273      forever
-003156  000274  endfunc
-003157  000275        
+003093  000211              else
+003094  000212                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 0);
+003095  000213                  img_Show(hndl, iTransmitButton);
+003096  000214              endif
+003097  000215              if(buttonState == iIncDecButton)
+003098  000216                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
+003099  000217                  img_Show(hndl, iIncDecButton);
+003100  000218                  if(incrementBy != 1)
+003101  000219                      incrementBy--;
+003102  000220                  else
+003103  000221                      incrementBy := 10;
+003104  000222                  endif
+003105  000223              else
+003106  000224                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 0);
+003107  000225                  img_Show(hndl, iIncDecButton);
+003108  000226              endif
+003109  000227              if(buttonState == iIncIncButton)
+003110  000228                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 1);
+003111  000229                  img_Show(hndl, iIncIncButton);
+003112  000230                  if(incrementBy != 10)
+003113  000231                      incrementBy++;
+003114  000232                  else
+003115  000233                      incrementBy := 1;
+003116  000234                  endif
+003117  000235              else
+003118  000236                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 0);
+003119  000237                  img_Show(hndl, iIncIncButton);
+003120  000238              endif
+003121  000239              if(buttonState == iCountDecButton)
+003122  000240                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 1);
+003123  000241                  img_Show(hndl, iCountDecButton);
+003124  000242                  if(count != 0)
+003125  000243                      count--;
+003126  000244                  else
+003127  000245                      count := 100;
+003128  000246                  endif
+003129  000247              else
+003130  000248                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 0);
+003131  000249                  img_Show(hndl, iCountDecButton);
+003132  000250              endif
+003133  000251              if(buttonState == iCountIncButton)
+003134  000252                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 1);
+003135  000253                  img_Show(hndl, iCountIncButton);
+003136  000254                  if(count != 100)
+003137  000255                      count++;
+003138  000256                  else
+003139  000257                      count := 0;
+003140  000258                  endif
+003141  000259              else
+003142  000260                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
+003143  000261                  img_Show(hndl, iCountIncButton);
+003144  000262              endif
+003145  000263          endif
+003146  000264        
+003147  000265          if(counting == 1)
+003148  000266              count := count + incrementBy;
+003149  000267              if(count > 100)
+003150  000268                  count := count - 100;
+003151  000269              endif
+003152  000270          endif
+003153  000271        
+003154  000272          img_SetWord(hndl, iCountGauge1, IMAGE_INDEX, count);
+003155  000273          img_Show(hndl, iCountGauge1);
+003156  000274          img_SetWord(hndl, iCountGauge2, IMAGE_INDEX, count);
+003157  000275          img_Show(hndl, iCountGauge2);
+003158  000276          img_SetWord(hndl, iCountGauge3, IMAGE_INDEX, count);
+003159  000277          img_Show(hndl, iCountGauge3);
+003160  000278          img_SetWord(hndl, iCountMeter, IMAGE_INDEX, count);
+003161  000279          img_Show(hndl, iCountMeter);
+003162  000280        
+003163  000281          ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
+003164  000282          ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
+003165  000283      forever
+003166  000284  endfunc
+003167  000285        
 
 
 Symbol Table:
@@ -3778,7 +3788,7 @@ LANDSCAPE_R                            1  0x00000001 (const dword)  (not used)
 LAVENDER                           59199  0x0000e73f (const dword)  (not used)
 LAVENDERBLUSH                      65438  0x0000ff9e (const dword)  (not used)
 LAWNGREEN                          32736  0x00007fe0 (const dword)  (not used)
-ledDigitsDisplay                    1738  0x000006ca (User func) args[7] r=0  (usage 12)
+ledDigitsDisplay                    1792  0x00000700 (User func) args[7] r=0  (usage 12)
 LEFT_POS                               2  0x00000002 (const dword)  (not used)
 LEMONCHIFFON                       65497  0x0000ffd9 (const dword)  (not used)
 LIGHTBLUE                          44764  0x0000aedc (const dword)  (not used)
