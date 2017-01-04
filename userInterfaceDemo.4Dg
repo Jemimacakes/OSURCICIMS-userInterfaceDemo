@@ -20,9 +20,13 @@ func main()
     var incrementBy := 1;
     var count := 0;
     var counting := 0;
+    var txBuf[32];
+    var tempRX;
 
     gfx_ScreenMode(LANDSCAPE);
     touch_Set(TOUCH_ENABLE);
+    setbaud(BAUD_9600);
+    com_TXbuffer(txBuf, 32, 0);
 
 //  Uncomment the following if uSD images, fonts or strings used.
 
@@ -120,6 +124,9 @@ func main()
             if(buttonState == iTransmitButton)
                 img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iTransmitButton);
+                to(COM0); putstr("Current Count: ");
+                to(COM0); putnum(DEC, count);
+                to(COM0); putch('\n');
             endif
             if(buttonState == iIncDecButton)
                 img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
@@ -208,6 +215,9 @@ func main()
             if(buttonState == iTransmitButton)
                 img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iTransmitButton);
+                to(COM0); putstr("Current Count: ");
+                to(COM0); putnum(DEC, count);
+                to(COM0); putch('\n');
             else
                 img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iTransmitButton);
@@ -267,6 +277,11 @@ func main()
             if(count > 100)
                 count := count - 100;
             endif
+        endif
+
+        tempRX := serin();
+        if(tempRX >= 0 && tempRX <= 100)
+            count := tempRX;
         endif
 
         img_SetWord(hndl, iCountGauge1, IMAGE_INDEX, count);
