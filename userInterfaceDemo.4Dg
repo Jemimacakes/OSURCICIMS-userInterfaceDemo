@@ -16,16 +16,12 @@ func main()
 
     var touchState;
     var buttonState;
-
-    var incrementBy := 1;
-    var count := 0;
-    var counting := 0;
     var txBuf[32];
-    var tempRX;
+    var reply;
 
     gfx_ScreenMode(LANDSCAPE);
     touch_Set(TOUCH_ENABLE);
-    setbaud(BAUD_9600);
+    setbaud(BAUD_57600);
     com_TXbuffer(txBuf, 32, 0);
 
 //  Uncomment the following if uSD images, fonts or strings used.
@@ -46,6 +42,80 @@ func main()
 //  hFontn := file_LoadImageControl("USERIN~1.dan", "USERIN~1.gcn", 1); // Open handle to access uSD fonts, uncomment if required and change n to font number dropping a and c if > 9
 //  hstrings := file_Open("USERIN~1.txf", 'r'); // Open handle to access uSD strings, uncomment if required
     hndl := file_LoadImageControl("USERIN~1.dat", "USERIN~1.gci", 1);
+
+    reply := FormMain();
+    repeat
+        if(reply == iCounterButton)
+            reply := FormCounter();
+        else
+            reply := FormMain();
+        endif
+    forever
+
+endfunc
+
+func FormMain()
+
+    var touchState, buttonState, returnValue;
+    gfx_Cls();
+
+    // CounterButton 1.0 generated 1/17/2017 6:52:44 PM
+    img_ClearAttributes(hndl, iCounterButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iCounterButton);  // show button, only do this once
+
+    // StaticWelcomeText 1.0 generated 1/17/2017 7:17:20 PM
+    img_Show(hndl,iStaticWelcomeText);
+
+    // Statictext1 1.0 generated 1/17/2017 7:23:38 PM
+    img_Show(hndl,iStatictext1) ;
+
+    repeat
+        touchState := touch_Get(TOUCH_STATUS);
+        buttonState := img_Touched(hndl, -1);
+
+        if(touchState == TOUCH_PRESSED)
+            if(buttonState == iCounterButton)
+                img_SetWord(hndl, iCounterButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iCounterButton);
+            endif
+        endif
+
+        if(touchState == TOUCH_RELEASED)
+            if(buttonState == iCounterButton)
+                img_SetWord(hndl, iCounterButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iCounterButton);
+                returnValue := iCounterButton;
+                goto exit;
+            endif
+        endif
+
+        if(touchState == TOUCH_MOVING)
+            if(buttonState == iCounterButton)
+                img_SetWord(hndl, iCounterButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iCounterButton);
+            else
+                img_SetWord(hndl, iCounterButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iCounterButton);
+            endif
+        endif
+    forever
+
+exit:
+    pause(200);
+
+    img_SetAttributes(hndl, iCounterButton, I_TOUCH_DISABLE);
+
+    return returnValue;
+
+endfunc
+
+func FormCounter()
+
+    var touchState, buttonState, incrementBy, count, counting, tempRX, returnValue;
+    gfx_Cls();
+    incrementBy := 1;
+    count := 0;
+    counting := 0;
 
     // StartButton 1.0 generated 12/30/2016 12:40:26 PM
     img_ClearAttributes(hndl, iStartButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
@@ -75,6 +145,10 @@ func main()
     img_ClearAttributes(hndl, iCountIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
     img_Show(hndl, iCountIncButton);  // show button, only do this once
 
+    // CounterBackButton 1.0 generated 1/17/2017 6:28:28 PM
+    img_ClearAttributes(hndl, iCounterBackButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iCounterBackButton);  // show button, only do this once
+
     // CountMeter 1.0 generated 12/30/2016 2:00:33 PM
     img_SetWord(hndl, iCountMeter, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
     img_Show(hndl, iCountMeter);
@@ -86,10 +160,6 @@ func main()
     // CountGauge2 1.0 generated 12/30/2016 2:00:38 PM
     img_SetWord(hndl, iCountGauge2, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
     img_Show(hndl, iCountGauge2);
-
-    // CountGauge3 1.0 generated 12/30/2016 2:00:39 PM
-    img_SetWord(hndl, iCountGauge3, IMAGE_INDEX, 0); // where frame is 0 to 100 (for a displayed 0 to 100)
-    img_Show(hndl, iCountGauge3);
 
     // Leddigits1 1.0 generated 12/30/2016 2:00:45 PM
     img_Show(hndl, iLeddigits1);  // show all digits at 0, only do this once
@@ -164,6 +234,10 @@ func main()
                     count := 0;
                 endif
             endif
+            if(buttonState == iCounterBackButton)
+                img_SetWord(hndl, iCounterBackButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iCounterBackButton);
+            endif
         endif
 
         if(touchState == TOUCH_RELEASED)
@@ -194,6 +268,12 @@ func main()
             if(buttonState == iCountIncButton)
                 img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iCountIncButton);
+            endif
+            if(buttonState == iCounterBackButton)
+                img_SetWord(hndl, iCounterBackButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iCounterBackButton);
+                returnValue := iCounterBackButton;
+                goto exit;
             endif
         endif
 
@@ -270,6 +350,13 @@ func main()
                 img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iCountIncButton);
             endif
+            if(buttonState == iCounterBackButton)
+                img_SetWord(hndl, iCounterBackButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iCounterBackButton);
+            else
+                img_SetWord(hndl, iCounterBackButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iCounterBackButton);
+            endif
         endif
 
         if(counting == 1)
@@ -288,13 +375,26 @@ func main()
         img_Show(hndl, iCountGauge1);
         img_SetWord(hndl, iCountGauge2, IMAGE_INDEX, count);
         img_Show(hndl, iCountGauge2);
-        img_SetWord(hndl, iCountGauge3, IMAGE_INDEX, count);
-        img_Show(hndl, iCountGauge3);
         img_SetWord(hndl, iCountMeter, IMAGE_INDEX, count);
         img_Show(hndl, iCountMeter);
 
         ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
         ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
     forever
+
+exit:
+    pause(200);
+
+    img_SetAttributes(hndl, iStartButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iStopButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iTransmitButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iIncDecButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iIncIncButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iCountDecButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iCountIncButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iCounterBackButton, I_TOUCH_DISABLE);
+
+    return returnValue;
+
 endfunc
 

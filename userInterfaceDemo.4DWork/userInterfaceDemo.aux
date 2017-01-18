@@ -2,7 +2,7 @@
 ==============================================================
 4DGL Compiler 2.8.0.5 -- Copyright 2004-2015 4D Labs
 ** C:\Users\Jemim\Documents\GitHub\OSURCICIMS-userInterfaceDemo\userInterfaceDemo.4dg
-compiled Tue Jan 03 16:21:37 2017
+compiled Tue Jan 17 19:23:57 2017
 
 ==============================================================
 ==============================================================
@@ -10,14 +10,26 @@ compiled Tue Jan 03 16:21:37 2017
 
 No Ref for file
 [LINKING]
-function 2, main, address 82
+function 4, FormCounter, address 82
+stack usage 14 + 4
+function 'FormCounter' requires no arguments
+function 'FormCounter' returns a value
+
+[LINKING]
+function 3, FormMain, address 2069
+stack usage 6 + 4
+function 'FormMain' requires no arguments
+function 'FormMain' returns a value
+
+[LINKING]
+function 2, main, address 2324
 (main entry point)
-stack usage 76 + 4
+stack usage 70 + 4
 function 'main' requires no arguments
 function 'main' has no return value
 
 [LINKING]
-function 1, ledDigitsDisplay, address 1971
+function 1, ledDigitsDisplay, address 2487
 stack usage 8 + 4
 function 'ledDigitsDisplay' requires 7 argument
 function 'ledDigitsDisplay' has no return value
@@ -86,69 +98,75 @@ lookup16
 [CONSTANTS]
 __MAXMEM                          00003840      14400  (usage 1)
 __MAXPROG                         00003840      14400  (usage 1)
-BAUD_9600                         00000006          6  (usage 3)
+BAUD_57600                        0000000C         12  (usage 3)
 COM0                              0000F804      63492  (usage 18)
 DEC                               0000050A       1290  (usage 6)
-I_TOUCH_DISABLE                   00000020         32  (usage 21)
-iCountDecButton                   0000000D         13  (usage 39)
+I_TOUCH_DISABLE                   00000020         32  (usage 54)
+iCountDecButton                   0000000C         12  (usage 42)
+iCounterBackButton                00000010         16  (usage 45)
+iCounterButton                    00000011         17  (usage 48)
 iCountGauge1                      00000001          1  (usage 12)
 iCountGauge2                      00000002          2  (usage 12)
-iCountGauge3                      00000003          3  (usage 12)
-iCountIncButton                   0000000E         14  (usage 39)
+iCountIncButton                   0000000D         13  (usage 42)
 iCountMeter                       00000000          0  (usage 12)
-iCountText                        00000010         16  (usage 3)
-iIncDecButton                     00000007          7  (usage 39)
-iIncIncButton                     00000008          8  (usage 39)
-iIncrementByText                  0000000F         15  (usage 3)
-iLeddigits1                       00000009          9  (usage 9)
-iLeddigits2                       0000000B         11  (usage 9)
-IMAGE_INDEX                       00000009          9  (usage 111)
+iCountText                        0000000F         15  (usage 3)
+iIncDecButton                     00000006          6  (usage 42)
+iIncIncButton                     00000007          7  (usage 42)
+iIncrementByText                  0000000E         14  (usage 3)
+iLeddigits1                       00000008          8  (usage 9)
+iLeddigits2                       0000000A         10  (usage 9)
+IMAGE_INDEX                       00000009          9  (usage 129)
 IMAGE_XPOS                        00000002          2  (usage 3)
-iStartButton                      00000004          4  (usage 39)
-iStopButton                       00000005          5  (usage 39)
-iTransmitButton                   00000006          6  (usage 39)
+iStartButton                      00000003          3  (usage 42)
+iStatictext1                      00000013         19  (usage 3)
+iStaticWelcomeText                00000012         18  (usage 3)
+iStopButton                       00000004          4  (usage 42)
+iTransmitButton                   00000005          5  (usage 42)
 LANDSCAPE                         00000000          0  (usage 3)
 PICASO                            00000001          1  (usage 3)
 TOUCH_ENABLE                      00000000          0  (usage 3)
-TOUCH_MOVING                      00000003          3  (usage 3)
-TOUCH_PRESSED                     00000001          1  (usage 3)
-TOUCH_RELEASED                    00000002          2  (usage 3)
-TOUCH_STATUS                      00000000          0  (usage 3)
+TOUCH_MOVING                      00000003          3  (usage 6)
+TOUCH_PRESSED                     00000001          1  (usage 6)
+TOUCH_RELEASED                    00000002          2  (usage 6)
+TOUCH_STATUS                      00000000          0  (usage 6)
 
 [PmmC FUNCTIONS]
 com_TXbuffer                      FFFFFF82        -126  args=3 r=0  (usage 3)
 file_LoadImageControl             FFFFFF04        -252  args=3 r=1  (usage 3)
 file_Mount                        FFFFFF03        -253  args=0 r=1  (usage 6)
-gfx_Cls                           FFFFFFCD         -51  args=0 r=0  (usage 6)
+gfx_Cls                           FFFFFFCD         -51  args=0 r=0  (usage 12)
 gfx_ScreenMode                    FFFFFF9E         -98  args=1 r=1  (usage 3)
-img_ClearAttributes               FFFFFF45        -187  args=3 r=1  (usage 21)
-img_SetWord                       FFFFFF49        -183  args=4 r=1  (usage 114)
-img_Show                          FFFFFF47        -185  args=2 r=1  (usage 144)
-img_Touched                       FFFFFF44        -188  args=2 r=1  (usage 3)
-pause                             FFFFFFFA          -6  args=1 r=0  (usage 6)
+img_ClearAttributes               FFFFFF45        -187  args=3 r=1  (usage 27)
+img_SetAttributes                 FFFFFF46        -186  args=3 r=1  (usage 27)
+img_SetWord                       FFFFFF49        -183  args=4 r=1  (usage 132)
+img_Show                          FFFFFF47        -185  args=2 r=1  (usage 174)
+img_Touched                       FFFFFF44        -188  args=2 r=1  (usage 6)
+pause                             FFFFFFFA          -6  args=1 r=0  (usage 12)
 putch                             FFFFFFFE          -2  args=1 r=0  (usage 6)
 putnum                            FFFFFFF9          -7  args=2 r=1  (usage 6)
 putstr                            FFFFFFF7          -9  args=1 r=1  (usage 12)
 serin                             FFFFFFFF          -1  args=0 r=1  (usage 3)
 setbaud                           FFFFFFFC          -4  args=1 r=0  (usage 3)
 to                                FFFFFFFB          -5  args=1 r=1  (usage 18)
-touch_Get                         FFFFFF37        -201  args=1 r=1  (usage 3)
+touch_Get                         FFFFFF37        -201  args=1 r=1  (usage 6)
 touch_Set                         FFFFFF38        -200  args=1 r=0  (usage 3)
 
 [USER FUNCTIONS]
-ledDigitsDisplay                  000007B3  args=7 r=0  (usage 12)
+FormCounter                       00000052  args=0 r=0  (usage 3)
+FormMain                          00000815  args=0 r=0  (usage 6)
+ledDigitsDisplay                  000009B7  args=7 r=0  (usage 12)
 
 [GLOBAL VARIABLES]
-hndl                                   1  word       (usage 285)
+hndl                                   1  word       (usage 369)
 
 [PRIVATE VARIABLES]
 
 [DATA]
-0007: 4D 6F 75 6E 74 69 6E 67 2E 2E 2E 00 44 72 69 76     Mounting....Driv
-0017: 65 20 6E 6F 74 20 6D 6F 75 6E 74 65 64 2E 2E 2E     e not mounted...
-0027: 00 55 53 45 52 49 4E 7E 31 2E 64 61 74 00 55 53     .USERIN~1.dat.US
-0037: 45 52 49 4E 7E 31 2E 67 63 69 00 43 75 72 72 65     ERIN~1.gci.Curre
-0047: 6E 74 20 43 6F 75 6E 74 3A 20 00                    nt Count: .
+0007: 43 75 72 72 65 6E 74 20 43 6F 75 6E 74 3A 20 00     Current Count: .
+0017: 4D 6F 75 6E 74 69 6E 67 2E 2E 2E 00 44 72 69 76     Mounting....Driv
+0027: 65 20 6E 6F 74 20 6D 6F 75 6E 74 65 64 2E 2E 2E     e not mounted...
+0037: 00 55 53 45 52 49 4E 7E 31 2E 64 61 74 00 55 53     .USERIN~1.dat.US
+0047: 45 52 49 4E 7E 31 2E 67 63 69 00                    ERIN~1.gci.
 
 [__MAXPROG]
 14400
@@ -158,7 +176,7 @@ hndl                                   1  word       (usage 285)
 [PROGRAM]
 main
 [CODESIZE]
-2168
+2684
 [MEMSIZE]
 1
 [ARGCOUNT]
@@ -168,7 +186,7 @@ NO
 [STACKSIZE]
 0 (AUTO)
 [STACK_ESTIMATE]
-92   (nb:- worst case estimate)
+114   (nb:- worst case estimate)
 [MODE]
 0
 

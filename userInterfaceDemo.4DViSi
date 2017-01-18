@@ -16,8 +16,8 @@ Options
     SignedDigits                 No
 end
 Form
-    Name                         Form1
-    Alias                        Form1
+    Name                         FormCounter
+    Alias                        FormCounter
     Bgtype                       Color
     Color                        BLACK
     Image                        (None)
@@ -110,7 +110,7 @@ Gauge
     Bevel.Visible                Yes
     Color                        BLACK
     Height                       100
-    Left                         4
+    Left                         44
     Maxvalue                     100
     Minvalue                     0
     Orientation                  Vertical
@@ -155,52 +155,7 @@ Gauge
     Bevel.Visible                Yes
     Color                        BLACK
     Height                       100
-    Left                         40
-    Maxvalue                     100
-    Minvalue                     0
-    Orientation                  Vertical
-    Palette1.High                clLime
-    Palette1.Low                 0x005100
-    Palette2.High                clYellow
-    Palette2.Low                 0x005151
-    Palette3.High                clRed
-    Palette3.Low                 0x000051
-    Percent1                     60
-    Percent2                     25
-    Spacing                      1
-    Step                         10
-    Style                        BottomLeft
-    TickHeight                   1
-    Top                          4
-    Width                        30
-    OnChanged                    ''
-    OnTouchMoving                ''
-    OnTouchPressed               ''
-    OnTouchReleased              ''
-end
-Gauge
-    Name                         CountGauge3
-    Alias                        CountGauge3
-    Bevel.BorderColor            clBtnFace
-    Bevel.BorderWidth            0
-    Bevel.InnerColor             BLACK
-    Bevel.InnerHighlight         clBtnHighlight
-    Bevel.InnerOutline           None
-    Bevel.InnerShadow            clBtnShadow
-    Bevel.InnerSpace             1
-    Bevel.InnerStyle             Lowered
-    Bevel.Innerwidth             2
-    Bevel.OuterColor             clBtnFace
-    Bevel.OuterHighlight         clBtnHighlight
-    Bevel.OuterOutline           Outer
-    Bevel.OuterShadow            clBtnShadow
-    Bevel.OuterSpace             0
-    Bevel.OuterStyle             Raised
-    Bevel.Outerwidth             1
-    Bevel.Visible                Yes
-    Color                        BLACK
-    Height                       100
-    Left                         76
+    Left                         79
     Maxvalue                     100
     Minvalue                     0
     Orientation                  Vertical
@@ -632,4 +587,153 @@ StaticText
     Transparent                  Yes
     Width                        48
     WordWrap                     No
+end
+WinButton
+    Name                         CounterBackButton
+    Alias                        CounterBackButton
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      Back
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    8
+    Font.Style                   []
+    Height                       35
+    Left                         4
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          4
+    Width                        35
+    OnChanged                    ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Form
+    Name                         FormMain
+    Alias                        FormMain
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         CounterButton
+    Alias                        CounterButton
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      Counter
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    12
+    Font.Style                   []
+    Height                       40
+    Left                         100
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          100
+    Width                        120
+    OnChanged                    ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+StaticText
+    Name                         StaticWelcomeText
+    Alias                        StaticWelcomeText
+    AutoSize                     Yes
+    Caption                      'Welcome to the 4D Systems uLCD-32PTU'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    12
+    Font.Style                   []
+    Height                       19
+    Left                         12
+    Top                          0
+    Transparent                  Yes
+    Width                        295
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext1
+    Alias                        Statictext1
+    AutoSize                     Yes
+    Caption                      'Please select a testing option'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    12
+    Font.Style                   []
+    Height                       19
+    Left                         58
+    Top                          221
+    Transparent                  Yes
+    Width                        203
+    WordWrap                     Yes
 end
