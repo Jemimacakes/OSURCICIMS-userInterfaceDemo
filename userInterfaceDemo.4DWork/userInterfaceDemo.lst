@@ -2864,7 +2864,7 @@ file C:\Users\Jemim\Documents\GitHub\OSURCICIMS-userInterfaceDemo\userInterfaceD
 
 002853  000009  #inherit "userInterfaceDemoConst.inc"
 002854  000009  #inherit "userInterfaceDemoConst.inc"
-002855  000001  // File generated 1/18/2017 4:23:43 PM
+002855  000001  // File generated 1/18/2017 4:41:15 PM
 002856  000002  // Warning! This is a generated file, any manual changes will be
 002857  000003  // lost during the next generation.
 002858  000004        
@@ -3238,367 +3238,364 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\ledDigitsDisplay.i
 003224  000342              if(buttonState == iTransmitButton)
 003225  000343                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
 003226  000344                  img_Show(hndl, iTransmitButton);
-003227  000345                  to(COM0); putstr("Current Count: ");
-003228  000346                  to(COM0); putnum(DEC, count);
-003229  000347                  to(COM0); putch('\n');
-003230  000348              else
-003231  000349                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 0);
-003232  000350                  img_Show(hndl, iTransmitButton);
-003233  000351              endif
-003234  000352              if(buttonState == iIncDecButton)
-003235  000353                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
-003236  000354                  img_Show(hndl, iIncDecButton);
-003237  000355                  if(incrementBy != 1)
-003238  000356                      incrementBy--;
-003239  000357                  else
-003240  000358                      incrementBy := 10;
-003241  000359                  endif
-003242  000360              else
-003243  000361                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 0);
-003244  000362                  img_Show(hndl, iIncDecButton);
-003245  000363              endif
-003246  000364              if(buttonState == iIncIncButton)
-003247  000365                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 1);
-003248  000366                  img_Show(hndl, iIncIncButton);
-003249  000367                  if(incrementBy != 10)
-003250  000368                      incrementBy++;
-003251  000369                  else
-003252  000370                      incrementBy := 1;
-003253  000371                  endif
-003254  000372              else
-003255  000373                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 0);
-003256  000374                  img_Show(hndl, iIncIncButton);
-003257  000375              endif
-003258  000376              if(buttonState == iCountDecButton)
-003259  000377                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 1);
-003260  000378                  img_Show(hndl, iCountDecButton);
-003261  000379                  if(count != 0)
-003262  000380                      count--;
-003263  000381                  else
-003264  000382                      count := 100;
-003265  000383                  endif
-003266  000384              else
-003267  000385                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 0);
-003268  000386                  img_Show(hndl, iCountDecButton);
-003269  000387              endif
-003270  000388              if(buttonState == iCountIncButton)
-003271  000389                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 1);
-003272  000390                  img_Show(hndl, iCountIncButton);
-003273  000391                  if(count != 100)
-003274  000392                      count++;
-003275  000393                  else
-003276  000394                      count := 0;
-003277  000395                  endif
-003278  000396              else
-003279  000397                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
-003280  000398                  img_Show(hndl, iCountIncButton);
-003281  000399              endif
-003282  000400              if(buttonState == iCounterBackButton)
-003283  000401                  img_SetWord(hndl, iCounterBackButton, IMAGE_INDEX, 1);
+003227  000345              else
+003228  000346                  img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 0);
+003229  000347                  img_Show(hndl, iTransmitButton);
+003230  000348              endif
+003231  000349              if(buttonState == iIncDecButton)
+003232  000350                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 1);
+003233  000351                  img_Show(hndl, iIncDecButton);
+003234  000352                  if(incrementBy != 1)
+003235  000353                      incrementBy--;
+003236  000354                  else
+003237  000355                      incrementBy := 10;
+003238  000356                  endif
+003239  000357              else
+003240  000358                  img_SetWord(hndl, iIncDecButton, IMAGE_INDEX, 0);
+003241  000359                  img_Show(hndl, iIncDecButton);
+003242  000360              endif
+003243  000361              if(buttonState == iIncIncButton)
+003244  000362                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 1);
+003245  000363                  img_Show(hndl, iIncIncButton);
+003246  000364                  if(incrementBy != 10)
+003247  000365                      incrementBy++;
+003248  000366                  else
+003249  000367                      incrementBy := 1;
+003250  000368                  endif
+003251  000369              else
+003252  000370                  img_SetWord(hndl, iIncIncButton, IMAGE_INDEX, 0);
+003253  000371                  img_Show(hndl, iIncIncButton);
+003254  000372              endif
+003255  000373              if(buttonState == iCountDecButton)
+003256  000374                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 1);
+003257  000375                  img_Show(hndl, iCountDecButton);
+003258  000376                  if(count != 0)
+003259  000377                      count--;
+003260  000378                  else
+003261  000379                      count := 100;
+003262  000380                  endif
+003263  000381              else
+003264  000382                  img_SetWord(hndl, iCountDecButton, IMAGE_INDEX, 0);
+003265  000383                  img_Show(hndl, iCountDecButton);
+003266  000384              endif
+003267  000385              if(buttonState == iCountIncButton)
+003268  000386                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 1);
+003269  000387                  img_Show(hndl, iCountIncButton);
+003270  000388                  if(count != 100)
+003271  000389                      count++;
+003272  000390                  else
+003273  000391                      count := 0;
+003274  000392                  endif
+003275  000393              else
+003276  000394                  img_SetWord(hndl, iCountIncButton, IMAGE_INDEX, 0);
+003277  000395                  img_Show(hndl, iCountIncButton);
+003278  000396              endif
+003279  000397              if(buttonState == iCounterBackButton)
+003280  000398                  img_SetWord(hndl, iCounterBackButton, IMAGE_INDEX, 1);
+003281  000399                  img_Show(hndl, iCounterBackButton);
+003282  000400              else
+003283  000401                  img_SetWord(hndl, iCounterBackButton, IMAGE_INDEX, 0);
 003284  000402                  img_Show(hndl, iCounterBackButton);
-003285  000403              else
-003286  000404                  img_SetWord(hndl, iCounterBackButton, IMAGE_INDEX, 0);
-003287  000405                  img_Show(hndl, iCounterBackButton);
-003288  000406              endif
-003289  000407          endif
-003290  000408        
-003291  000409          if(counting == 1)
-003292  000410              count := count + incrementBy;
-003293  000411              if(count > 100)
-003294  000412                  count := count - 100;
-003295  000413              endif
-003296  000414          endif
-003297  000415        
-003298  000416          tempRX := serin();
-003299  000417          if(tempRX >= 0 && tempRX <= 100)
-003300  000418              count := tempRX;
-003301  000419          endif
-003302  000420        
-003303  000421          img_SetWord(hndl, iCountGauge1, IMAGE_INDEX, count);
-003304  000422          img_Show(hndl, iCountGauge1);
-003305  000423          img_SetWord(hndl, iCountGauge2, IMAGE_INDEX, count);
-003306  000424          img_Show(hndl, iCountGauge2);
-003307  000425          img_SetWord(hndl, iCountMeter, IMAGE_INDEX, count);
-003308  000426          img_Show(hndl, iCountMeter);
-003309  000427        
-003310  000428          ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
-003311  000429          ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
-003312  000430      forever
+003285  000403              endif
+003286  000404          endif
+003287  000405        
+003288  000406          if(counting == 1)
+003289  000407              count := count + incrementBy;
+003290  000408              if(count > 100)
+003291  000409                  count := count - 100;
+003292  000410              endif
+003293  000411          endif
+003294  000412        
+003295  000413          tempRX := serin();
+003296  000414          if(tempRX >= 0 && tempRX <= 100)
+003297  000415              count := tempRX;
+003298  000416          endif
+003299  000417        
+003300  000418          img_SetWord(hndl, iCountGauge1, IMAGE_INDEX, count);
+003301  000419          img_Show(hndl, iCountGauge1);
+003302  000420          img_SetWord(hndl, iCountGauge2, IMAGE_INDEX, count);
+003303  000421          img_Show(hndl, iCountGauge2);
+003304  000422          img_SetWord(hndl, iCountMeter, IMAGE_INDEX, count);
+003305  000423          img_Show(hndl, iCountMeter);
+003306  000424        
+003307  000425          ledDigitsDisplay(incrementBy, iLeddigits1+1, 155, 4, 1, 30, 0);
+003308  000426          ledDigitsDisplay(count, iLeddigits2+1, 155, 4, 1, 30, 0);
+003309  000427      forever
+003310  000428        
+003311  000429  exit:
+003312  000430      pause(200);
 003313  000431        
-003314  000432  exit:
-003315  000433      pause(200);
-003316  000434        
-003317  000435      img_SetAttributes(hndl, iStartButton, I_TOUCH_DISABLE);
-003318  000436      img_SetAttributes(hndl, iStopButton, I_TOUCH_DISABLE);
-003319  000437      img_SetAttributes(hndl, iTransmitButton, I_TOUCH_DISABLE);
-003320  000438      img_SetAttributes(hndl, iIncDecButton, I_TOUCH_DISABLE);
-003321  000439      img_SetAttributes(hndl, iIncIncButton, I_TOUCH_DISABLE);
-003322  000440      img_SetAttributes(hndl, iCountDecButton, I_TOUCH_DISABLE);
-003323  000441      img_SetAttributes(hndl, iCountIncButton, I_TOUCH_DISABLE);
-003324  000442      img_SetAttributes(hndl, iCounterBackButton, I_TOUCH_DISABLE);
-003325  000443        
-003326  000444      return returnValue;
-003327  000445        
-003328  000446  endfunc
-003329  000447        
-003330  000448  func FormSquare()
-003331  000449        
-003332  000450      var touchState, buttonState;
-003333  000451      var squareX := 0, squareY := 0;
-003334  000452      var returnValue;
+003314  000432      img_SetAttributes(hndl, iStartButton, I_TOUCH_DISABLE);
+003315  000433      img_SetAttributes(hndl, iStopButton, I_TOUCH_DISABLE);
+003316  000434      img_SetAttributes(hndl, iTransmitButton, I_TOUCH_DISABLE);
+003317  000435      img_SetAttributes(hndl, iIncDecButton, I_TOUCH_DISABLE);
+003318  000436      img_SetAttributes(hndl, iIncIncButton, I_TOUCH_DISABLE);
+003319  000437      img_SetAttributes(hndl, iCountDecButton, I_TOUCH_DISABLE);
+003320  000438      img_SetAttributes(hndl, iCountIncButton, I_TOUCH_DISABLE);
+003321  000439      img_SetAttributes(hndl, iCounterBackButton, I_TOUCH_DISABLE);
+003322  000440        
+003323  000441      return returnValue;
+003324  000442        
+003325  000443  endfunc
+003326  000444        
+003327  000445  func FormSquare()
+003328  000446        
+003329  000447      var touchState, buttonState;
+003330  000448      var squareX := 0, squareY := 0;
+003331  000449      var returnValue;
+003332  000450        
+003333  000451  redraw:
+003334  000452      gfx_Cls();
 003335  000453        
-003336  000454  redraw:
-003337  000455      gfx_Cls();
-003338  000456        
-003339  000457      // SquareXDecButton 1.0 generated 1/18/2017 3:10:21 PM
-003340  000458      img_ClearAttributes(hndl, iSquareXDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-003341  000459      img_Show(hndl, iSquareXDecButton);  // show button, only do this once
-003342  000460        
-003343  000461      // SquareXIncButton 1.0 generated 1/18/2017 3:10:26 PM
-003344  000462      img_ClearAttributes(hndl, iSquareXIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-003345  000463      img_Show(hndl, iSquareXIncButton);  // show button, only do this once
-003346  000464        
-003347  000465      // SquareYDecButton 1.0 generated 1/18/2017 3:10:30 PM
-003348  000466      img_ClearAttributes(hndl, iSquareYDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-003349  000467      img_Show(hndl, iSquareYDecButton);  // show button, only do this once
-003350  000468        
-003351  000469      // SquareYIncButton 1.0 generated 1/18/2017 3:10:32 PM
-003352  000470      img_ClearAttributes(hndl, iSquareYIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-003353  000471      img_Show(hndl, iSquareYIncButton);  // show button, only do this once
-003354  000472        
-003355  000473      // SquareDrawButton 1.0 generated 1/18/2017 3:10:52 PM
-003356  000474      img_ClearAttributes(hndl, iSquareDrawButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-003357  000475      img_Show(hndl, iSquareDrawButton);  // show button, only do this once
-003358  000476        
-003359  000477      // SquareBackButton 1.0 generated 1/18/2017 3:11:01 PM
-003360  000478      img_ClearAttributes(hndl, iSquareBackButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
-003361  000479      img_Show(hndl, iSquareBackButton);  // show button, only do this once
-003362  000480        
-003363  000481      // SquareXDigits 1.0 generated 1/18/2017 3:12:10 PM
-003364  000482      img_Show(hndl, iSquareXDigits);  // show all digits at 0, only do this once
-003365  000483      ledDigitsDisplay(squareX, iSquareXDigits+1, 100, 4, 1, 30, 0);
-003366  000484        
-003367  000485      // SquareYDigits 1.0 generated 1/18/2017 3:12:13 PM
-003368  000486      img_Show(hndl, iSquareYDigits);  // show all digits at 0, only do this once
-003369  000487      ledDigitsDisplay(squareY, iSquareYDigits+1, 100, 4, 1, 30, 0);
+003336  000454      // SquareXDecButton 1.0 generated 1/18/2017 3:10:21 PM
+003337  000455      img_ClearAttributes(hndl, iSquareXDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+003338  000456      img_Show(hndl, iSquareXDecButton);  // show button, only do this once
+003339  000457        
+003340  000458      // SquareXIncButton 1.0 generated 1/18/2017 3:10:26 PM
+003341  000459      img_ClearAttributes(hndl, iSquareXIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+003342  000460      img_Show(hndl, iSquareXIncButton);  // show button, only do this once
+003343  000461        
+003344  000462      // SquareYDecButton 1.0 generated 1/18/2017 3:10:30 PM
+003345  000463      img_ClearAttributes(hndl, iSquareYDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+003346  000464      img_Show(hndl, iSquareYDecButton);  // show button, only do this once
+003347  000465        
+003348  000466      // SquareYIncButton 1.0 generated 1/18/2017 3:10:32 PM
+003349  000467      img_ClearAttributes(hndl, iSquareYIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+003350  000468      img_Show(hndl, iSquareYIncButton);  // show button, only do this once
+003351  000469        
+003352  000470      // SquareDrawButton 1.0 generated 1/18/2017 3:10:52 PM
+003353  000471      img_ClearAttributes(hndl, iSquareDrawButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+003354  000472      img_Show(hndl, iSquareDrawButton);  // show button, only do this once
+003355  000473        
+003356  000474      // SquareBackButton 1.0 generated 1/18/2017 3:11:01 PM
+003357  000475      img_ClearAttributes(hndl, iSquareBackButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+003358  000476      img_Show(hndl, iSquareBackButton);  // show button, only do this once
+003359  000477        
+003360  000478      // SquareXDigits 1.0 generated 1/18/2017 3:12:10 PM
+003361  000479      img_Show(hndl, iSquareXDigits);  // show all digits at 0, only do this once
+003362  000480      ledDigitsDisplay(squareX, iSquareXDigits+1, 100, 4, 1, 30, 0);
+003363  000481        
+003364  000482      // SquareYDigits 1.0 generated 1/18/2017 3:12:13 PM
+003365  000483      img_Show(hndl, iSquareYDigits);  // show all digits at 0, only do this once
+003366  000484      ledDigitsDisplay(squareY, iSquareYDigits+1, 100, 4, 1, 30, 0);
+003367  000485        
+003368  000486      // SquareTitleText 1.0 generated 1/18/2017 3:12:20 PM
+003369  000487      img_Show(hndl,iSquareTitleText) ;
 003370  000488        
-003371  000489      // SquareTitleText 1.0 generated 1/18/2017 3:12:20 PM
-003372  000490      img_Show(hndl,iSquareTitleText) ;
+003371  000489      // SquareXText 1.0 generated 1/18/2017 3:12:31 PM
+003372  000490      img_Show(hndl,iSquareXText) ;
 003373  000491        
-003374  000492      // SquareXText 1.0 generated 1/18/2017 3:12:31 PM
-003375  000493      img_Show(hndl,iSquareXText) ;
+003374  000492      // SquareYText 1.0 generated 1/18/2017 3:12:34 PM
+003375  000493      img_Show(hndl,iSquareYText) ;
 003376  000494        
-003377  000495      // SquareYText 1.0 generated 1/18/2017 3:12:34 PM
-003378  000496      img_Show(hndl,iSquareYText) ;
-003379  000497        
-003380  000498      repeat
-003381  000499          touchState := touch_Get(TOUCH_STATUS);
-003382  000500          buttonState := img_Touched(hndl, -1);
-003383  000501        
-003384  000502          if(touchState == TOUCH_PRESSED)
-003385  000503              if(buttonState == iSquareXDecButton)
-003386  000504                  img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 1);
-003387  000505                  img_Show(hndl, iSquareXDecButton);
-003388  000506                  if(squareX != 0)
-003389  000507                      squareX--;
-003390  000508                  else
-003391  000509                      squareX := 320;
-003392  000510                  endif
-003393  000511              endif
-003394  000512              if(buttonState == iSquareXIncButton)
-003395  000513                  img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 1);
-003396  000514                  img_Show(hndl, iSquareXIncButton);
-003397  000515                  if(squareX != 320)
-003398  000516                      squareX++;
-003399  000517                  else
-003400  000518                      squareX := 0;
-003401  000519                  endif
-003402  000520              endif
-003403  000521              if(buttonState == iSquareYDecButton)
-003404  000522                  img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 1);
-003405  000523                  img_Show(hndl, iSquareYDecButton);
-003406  000524                  if(squareY != 0)
-003407  000525                      squareY--;
-003408  000526                  else
-003409  000527                      squareY := 240;
-003410  000528                  endif
-003411  000529              endif
-003412  000530              if(buttonState == iSquareYIncButton)
-003413  000531                  img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 1);
-003414  000532                  img_Show(hndl, iSquareYIncButton);
-003415  000533                  if(squareY != 240)
-003416  000534                      squareY++;
-003417  000535                  else
-003418  000536                      squareY := 0;
-003419  000537                  endif
-003420  000538              endif
-003421  000539              if(buttonState == iSquareDrawButton)
-003422  000540                  img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 1);
-003423  000541                  img_Show(hndl, iSquareDrawButton);
-003424  000542              endif
-003425  000543              if(buttonState == iSquareBackButton)
-003426  000544                  img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 1);
-003427  000545                  img_Show(hndl, iSquareBackButton);
-003428  000546              endif
-003429  000547          endif
-003430  000548        
-003431  000549          if(touchState == TOUCH_RELEASED)
-003432  000550              if(buttonState == iSquareXDecButton)
-003433  000551                  img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 0);
-003434  000552                  img_Show(hndl, iSquareXDecButton);
-003435  000553              endif
-003436  000554              if(buttonState == iSquareXIncButton)
-003437  000555                  img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 0);
-003438  000556                  img_Show(hndl, iSquareXIncButton);
-003439  000557              endif
-003440  000558              if(buttonState == iSquareYDecButton)
-003441  000559                  img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 0);
-003442  000560                  img_Show(hndl, iSquareYDecButton);
-003443  000561              endif
-003444  000562              if(buttonState == iSquareYIncButton)
-003445  000563                  img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 0);
-003446  000564                  img_Show(hndl, iSquareYIncButton);
-003447  000565              endif
-003448  000566              if(buttonState == iSquareDrawButton)
-003449  000567                  img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 0);
-003450  000568                  img_Show(hndl, iSquareDrawButton);
-003451  000569                  FormDrawSquare(squareX, squareY);
-003452  000570                  goto redraw;
-003453  000571              endif
-003454  000572              if(buttonState == iSquareBackButton)
-003455  000573                  img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 0);
-003456  000574                  img_Show(hndl, iSquareBackButton);
-003457  000575                  returnValue := iSquareBackButton;
-003458  000576                  goto exit;
-003459  000577              endif
-003460  000578          endif
-003461  000579        
-003462  000580          if(touchState == TOUCH_MOVING)
-003463  000581              if(buttonState == iSquareXDecButton)
-003464  000582                  img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 1);
-003465  000583                  img_Show(hndl, iSquareXDecButton);
-003466  000584                  if(squareX != 0)
-003467  000585                      squareX--;
-003468  000586                  else
-003469  000587                      squareX := 320;
-003470  000588                  endif
-003471  000589              else
-003472  000590                  img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 0);
-003473  000591                  img_Show(hndl, iSquareXDecButton);
-003474  000592              endif
-003475  000593              if(buttonState == iSquareXIncButton)
-003476  000594                  img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 1);
-003477  000595                  img_Show(hndl, iSquareXIncButton);
-003478  000596                  if(squareX != 320)
-003479  000597                      squareX++;
-003480  000598                  else
-003481  000599                      squareX := 0;
-003482  000600                  endif
-003483  000601              else
-003484  000602                  img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 0);
-003485  000603                  img_Show(hndl, iSquareXIncButton);
-003486  000604              endif
-003487  000605              if(buttonState == iSquareYDecButton)
-003488  000606                  img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 1);
-003489  000607                  img_Show(hndl, iSquareYDecButton);
-003490  000608                  if(squareY != 0)
-003491  000609                      squareY--;
-003492  000610                  else
-003493  000611                      squareY := 240;
-003494  000612                  endif
-003495  000613              else
-003496  000614                  img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 0);
-003497  000615                  img_Show(hndl, iSquareYDecButton);
-003498  000616              endif
-003499  000617              if(buttonState == iSquareYIncButton)
-003500  000618                  img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 1);
-003501  000619                  img_Show(hndl, iSquareYIncButton);
-003502  000620                  if(squareY != 240)
-003503  000621                      squareY++;
-003504  000622                  else
-003505  000623                      squareY := 0;
-003506  000624                  endif
-003507  000625              else
-003508  000626                  img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 0);
-003509  000627                  img_Show(hndl, iSquareYIncButton);
-003510  000628              endif
-003511  000629              if(buttonState == iSquareDrawButton)
-003512  000630                  img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 1);
+003377  000495      repeat
+003378  000496          touchState := touch_Get(TOUCH_STATUS);
+003379  000497          buttonState := img_Touched(hndl, -1);
+003380  000498        
+003381  000499          if(touchState == TOUCH_PRESSED)
+003382  000500              if(buttonState == iSquareXDecButton)
+003383  000501                  img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 1);
+003384  000502                  img_Show(hndl, iSquareXDecButton);
+003385  000503                  if(squareX != 0)
+003386  000504                      squareX--;
+003387  000505                  else
+003388  000506                      squareX := 320;
+003389  000507                  endif
+003390  000508              endif
+003391  000509              if(buttonState == iSquareXIncButton)
+003392  000510                  img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 1);
+003393  000511                  img_Show(hndl, iSquareXIncButton);
+003394  000512                  if(squareX != 320)
+003395  000513                      squareX++;
+003396  000514                  else
+003397  000515                      squareX := 0;
+003398  000516                  endif
+003399  000517              endif
+003400  000518              if(buttonState == iSquareYDecButton)
+003401  000519                  img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 1);
+003402  000520                  img_Show(hndl, iSquareYDecButton);
+003403  000521                  if(squareY != 0)
+003404  000522                      squareY--;
+003405  000523                  else
+003406  000524                      squareY := 240;
+003407  000525                  endif
+003408  000526              endif
+003409  000527              if(buttonState == iSquareYIncButton)
+003410  000528                  img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 1);
+003411  000529                  img_Show(hndl, iSquareYIncButton);
+003412  000530                  if(squareY != 240)
+003413  000531                      squareY++;
+003414  000532                  else
+003415  000533                      squareY := 0;
+003416  000534                  endif
+003417  000535              endif
+003418  000536              if(buttonState == iSquareDrawButton)
+003419  000537                  img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 1);
+003420  000538                  img_Show(hndl, iSquareDrawButton);
+003421  000539              endif
+003422  000540              if(buttonState == iSquareBackButton)
+003423  000541                  img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 1);
+003424  000542                  img_Show(hndl, iSquareBackButton);
+003425  000543              endif
+003426  000544          endif
+003427  000545        
+003428  000546          if(touchState == TOUCH_RELEASED)
+003429  000547              if(buttonState == iSquareXDecButton)
+003430  000548                  img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 0);
+003431  000549                  img_Show(hndl, iSquareXDecButton);
+003432  000550              endif
+003433  000551              if(buttonState == iSquareXIncButton)
+003434  000552                  img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 0);
+003435  000553                  img_Show(hndl, iSquareXIncButton);
+003436  000554              endif
+003437  000555              if(buttonState == iSquareYDecButton)
+003438  000556                  img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 0);
+003439  000557                  img_Show(hndl, iSquareYDecButton);
+003440  000558              endif
+003441  000559              if(buttonState == iSquareYIncButton)
+003442  000560                  img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 0);
+003443  000561                  img_Show(hndl, iSquareYIncButton);
+003444  000562              endif
+003445  000563              if(buttonState == iSquareDrawButton)
+003446  000564                  img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 0);
+003447  000565                  img_Show(hndl, iSquareDrawButton);
+003448  000566                  FormDrawSquare(squareX, squareY);
+003449  000567                  goto redraw;
+003450  000568              endif
+003451  000569              if(buttonState == iSquareBackButton)
+003452  000570                  img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 0);
+003453  000571                  img_Show(hndl, iSquareBackButton);
+003454  000572                  returnValue := iSquareBackButton;
+003455  000573                  goto exit;
+003456  000574              endif
+003457  000575          endif
+003458  000576        
+003459  000577          if(touchState == TOUCH_MOVING)
+003460  000578              if(buttonState == iSquareXDecButton)
+003461  000579                  img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 1);
+003462  000580                  img_Show(hndl, iSquareXDecButton);
+003463  000581                  if(squareX != 0)
+003464  000582                      squareX--;
+003465  000583                  else
+003466  000584                      squareX := 320;
+003467  000585                  endif
+003468  000586              else
+003469  000587                  img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 0);
+003470  000588                  img_Show(hndl, iSquareXDecButton);
+003471  000589              endif
+003472  000590              if(buttonState == iSquareXIncButton)
+003473  000591                  img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 1);
+003474  000592                  img_Show(hndl, iSquareXIncButton);
+003475  000593                  if(squareX != 320)
+003476  000594                      squareX++;
+003477  000595                  else
+003478  000596                      squareX := 0;
+003479  000597                  endif
+003480  000598              else
+003481  000599                  img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 0);
+003482  000600                  img_Show(hndl, iSquareXIncButton);
+003483  000601              endif
+003484  000602              if(buttonState == iSquareYDecButton)
+003485  000603                  img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 1);
+003486  000604                  img_Show(hndl, iSquareYDecButton);
+003487  000605                  if(squareY != 0)
+003488  000606                      squareY--;
+003489  000607                  else
+003490  000608                      squareY := 240;
+003491  000609                  endif
+003492  000610              else
+003493  000611                  img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 0);
+003494  000612                  img_Show(hndl, iSquareYDecButton);
+003495  000613              endif
+003496  000614              if(buttonState == iSquareYIncButton)
+003497  000615                  img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 1);
+003498  000616                  img_Show(hndl, iSquareYIncButton);
+003499  000617                  if(squareY != 240)
+003500  000618                      squareY++;
+003501  000619                  else
+003502  000620                      squareY := 0;
+003503  000621                  endif
+003504  000622              else
+003505  000623                  img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 0);
+003506  000624                  img_Show(hndl, iSquareYIncButton);
+003507  000625              endif
+003508  000626              if(buttonState == iSquareDrawButton)
+003509  000627                  img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 1);
+003510  000628                  img_Show(hndl, iSquareDrawButton);
+003511  000629              else
+003512  000630                  img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 0);
 003513  000631                  img_Show(hndl, iSquareDrawButton);
-003514  000632              else
-003515  000633                  img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 0);
-003516  000634                  img_Show(hndl, iSquareDrawButton);
-003517  000635              endif
-003518  000636              if(buttonState == iSquareBackButton)
-003519  000637                  img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 1);
+003514  000632              endif
+003515  000633              if(buttonState == iSquareBackButton)
+003516  000634                  img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 1);
+003517  000635                  img_Show(hndl, iSquareBackButton);
+003518  000636              else
+003519  000637                  img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 0);
 003520  000638                  img_Show(hndl, iSquareBackButton);
-003521  000639              else
-003522  000640                  img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 0);
-003523  000641                  img_Show(hndl, iSquareBackButton);
-003524  000642              endif
-003525  000643          endif
-003526  000644        
-003527  000645           ledDigitsDisplay(squareX, iSquareXDigits+1, 100, 4, 1, 30, 0);
-003528  000646           ledDigitsDisplay(squareY, iSquareYDigits+1, 100, 4, 1, 30, 0);
-003529  000647      forever
+003521  000639              endif
+003522  000640          endif
+003523  000641        
+003524  000642           ledDigitsDisplay(squareX, iSquareXDigits+1, 100, 4, 1, 30, 0);
+003525  000643           ledDigitsDisplay(squareY, iSquareYDigits+1, 100, 4, 1, 30, 0);
+003526  000644      forever
+003527  000645        
+003528  000646  exit:
+003529  000647      pause(200);
 003530  000648        
-003531  000649  exit:
-003532  000650      pause(200);
-003533  000651        
-003534  000652      img_SetAttributes(hndl, iSquareXDecButton, I_TOUCH_DISABLE);
-003535  000653      img_SetAttributes(hndl, iSquareXIncButton, I_TOUCH_DISABLE);
-003536  000654      img_SetAttributes(hndl, iSquareYDecButton, I_TOUCH_DISABLE);
-003537  000655      img_SetAttributes(hndl, iSquareYIncButton, I_TOUCH_DISABLE);
-003538  000656      img_SetAttributes(hndl, iSquareDrawButton, I_TOUCH_DISABLE);
-003539  000657      img_SetAttributes(hndl, iSquareBackButton, I_TOUCH_DISABLE);
-003540  000658        
-003541  000659      return returnValue;
-003542  000660        
-003543  000661  endfunc
-003544  000662        
-003545  000663  func FormDrawSquare(var squareX, var squareY)
-003546  000664        
-003547  000665      var touchState;
-003548  000666      gfx_Cls();
-003549  000667      gfx_RectangleFilled(squareX, squareY, 0, 0, ORANGE);
+003531  000649      img_SetAttributes(hndl, iSquareXDecButton, I_TOUCH_DISABLE);
+003532  000650      img_SetAttributes(hndl, iSquareXIncButton, I_TOUCH_DISABLE);
+003533  000651      img_SetAttributes(hndl, iSquareYDecButton, I_TOUCH_DISABLE);
+003534  000652      img_SetAttributes(hndl, iSquareYIncButton, I_TOUCH_DISABLE);
+003535  000653      img_SetAttributes(hndl, iSquareDrawButton, I_TOUCH_DISABLE);
+003536  000654      img_SetAttributes(hndl, iSquareBackButton, I_TOUCH_DISABLE);
+003537  000655        
+003538  000656      return returnValue;
+003539  000657        
+003540  000658  endfunc
+003541  000659        
+003542  000660  func FormDrawSquare(var squareX, var squareY)
+003543  000661        
+003544  000662      var touchState;
+003545  000663      gfx_Cls();
+003546  000664      gfx_RectangleFilled(squareX, squareY, 0, 0, ORANGE);
+003547  000665        
+003548  000666      repeat
+003549  000667          touchState := touch_Get(TOUCH_STATUS);
 003550  000668        
-003551  000669      repeat
-003552  000670          touchState := touch_Get(TOUCH_STATUS);
-003553  000671        
-003554  000672          if(touchState == TOUCH_RELEASED)
-003555  000673              goto exit;
-003556  000674          endif
-003557  000675      forever
+003551  000669          if(touchState == TOUCH_RELEASED)
+003552  000670              goto exit;
+003553  000671          endif
+003554  000672      forever
+003555  000673        
+003556  000674  exit:
+003557  000675      pause(200);
 003558  000676        
-003559  000677  exit:
-003560  000678      pause(200);
-003561  000679        
-003562  000680      return;
-003563  000681        
-003564  000682  endfunc
-003565  000683        
-003566  000684  func FormLCDTest()
-003567  000685        
-003568  000686      var touchState;
-003569  000687      var returnValue;
-003570  000688      gfx_Cls();
+003559  000677      return;
+003560  000678        
+003561  000679  endfunc
+003562  000680        
+003563  000681  func FormLCDTest()
+003564  000682        
+003565  000683      var touchState;
+003566  000684      var returnValue;
+003567  000685      gfx_Cls();
+003568  000686        
+003569  000687      repeat
+003570  000688          touchState := touch_Get(TOUCH_STATUS);
 003571  000689        
-003572  000690      repeat
-003573  000691          touchState := touch_Get(TOUCH_STATUS);
-003574  000692        
-003575  000693          if(touchState == TOUCH_RELEASED)
-003576  000694              returnValue == 0;
-003577  000695              goto exit;
-003578  000696          endif
-003579  000697      forever
+003572  000690          if(touchState == TOUCH_RELEASED)
+003573  000691              returnValue == 0;
+003574  000692              goto exit;
+003575  000693          endif
+003576  000694      forever
+003577  000695        
+003578  000696  exit:
+003579  000697      pause(200);
 003580  000698        
-003581  000699  exit:
-003582  000700      pause(200);
-003583  000701        
-003584  000702      return;
-003585  000703        
-003586  000704  endfunc
-003587  000705        
+003581  000699      return;
+003582  000700        
+003583  000701  endfunc
+003584  000702        
 Notice: local var 'touchState' in func 'main' is never used (line 17 file:userInterfaceDemo.4dg)
 Notice: local var 'buttonState' in func 'main' is never used (line 18 file:userInterfaceDemo.4dg)
 
@@ -3740,7 +3737,7 @@ COLUMN_ADDRESS_END1                    5  0x00000005 (const dword)  (not used)
 COLUMN_ADDRESS_END2                    4  0x00000004 (const dword)  (not used)
 COLUMN_ADDRESS_START1                  3  0x00000003 (const dword)  (not used)
 COLUMN_ADDRESS_START2                  2  0x00000002 (const dword)  (not used)
-COM0                               63492  0x0000f804 (const dword)  (usage 18)
+COM0                               63492  0x0000f804 (const dword)  (usage 9)
 COM1                               63496  0x0000f808 (const dword)  (not used)
 com1_Count                          -132  0xffffff7c (PmmC func) args[0] r=1  (not used)
 com1_Error                          -134  0xffffff7a (PmmC func) args[0] r=1  (not used)
@@ -3794,7 +3791,7 @@ DARKSLATEBLUE                      18929  0x000049f1 (const dword)  (not used)
 DARKSLATEGRAY                      10857  0x00002a69 (const dword)  (not used)
 DARKTURQUOISE                       1658  0x0000067a (const dword)  (not used)
 DARKVIOLET                         36890  0x0000901a (const dword)  (not used)
-DEC                                 1290  0x0000050a (const dword)  (usage 6)
+DEC                                 1290  0x0000050a (const dword)  (usage 3)
 DEC1                                 266  0x0000010a (const dword)  (not used)
 DEC1Z                               4362  0x0000110a (const dword)  (not used)
 DEC1ZB                              8458  0x0000210a (const dword)  (not used)
@@ -3949,7 +3946,7 @@ FORESTGREEN                         9284  0x00002444 (const dword)  (not used)
 FormCounter                         1545  0x00000609 (User func) args[0] r=0  (usage 3)
 FormDrawSquare                       128  0x00000080 (User func) args[2] r=0  (usage 3)
 FormLCDTest                           82  0x00000052 (User func) args[0] r=0  (usage 3)
-FormMain                            3532  0x00000dcc (User func) args[0] r=0  (usage 6)
+FormMain                            3477  0x00000d95 (User func) args[0] r=0  (usage 6)
 FormSquare                           185  0x000000b9 (User func) args[0] r=0  (usage 3)
 FRAME_DELAY                           22  0x00000016 (const dword)  (not used)
 FUCHSIA                            63519  0x0000f81f (const dword)  (not used)
@@ -4234,7 +4231,7 @@ LANDSCAPE_R                            1  0x00000001 (const dword)  (not used)
 LAVENDER                           59199  0x0000e73f (const dword)  (not used)
 LAVENDERBLUSH                      65438  0x0000ff9e (const dword)  (not used)
 LAWNGREEN                          32736  0x00007fe0 (const dword)  (not used)
-ledDigitsDisplay                    4309  0x000010d5 (User func) args[7] r=0  (usage 24)
+ledDigitsDisplay                    4254  0x0000109e (User func) args[7] r=0  (usage 24)
 LEFT_POS                               2  0x00000002 (const dword)  (not used)
 LEMONCHIFFON                       65497  0x0000ffd9 (const dword)  (not used)
 LIGHTBLUE                          44764  0x0000aedc (const dword)  (not used)
@@ -4263,7 +4260,7 @@ LPFINE                             43690  0x0000aaaa (const dword)  (not used)
 LPMEDIUM                           13107  0x00003333 (const dword)  (not used)
 LPSOLID                                0  0x00000000 (const dword)  (not used)
 MAGENTA                            63519  0x0000f81f (const dword)  (not used)
-main                                4107  0x0000100b (User func) args[0] r=0  (not used)
+main                                4052  0x00000fd4 (User func) args[0] r=0  (not used)
 MAROON                             32768  0x00008000 (const dword)  (not used)
 MAX                                  -15  0xfffffff1 (PmmC func) args[2] r=1  (not used)
 MDA                                63552  0x0000f840 (const dword)  (not used)
@@ -4366,9 +4363,9 @@ PROGRESSBAR_HIDE                       2  0x00000002 (const dword)  (not used)
 PROGRESSBAR_RAISED                 65535  0x0000ffff (const dword)  (not used)
 PROGRESSBAR_SUNKEN                 65534  0x0000fffe (const dword)  (not used)
 PURPLE                             32784  0x00008010 (const dword)  (not used)
-putch                                 -2  0xfffffffe (PmmC func) args[1] r=0  (usage 6)
-putnum                                -7  0xfffffff9 (PmmC func) args[2] r=1  (usage 6)
-putstr                                -9  0xfffffff7 (PmmC func) args[1] r=1  (usage 12)
+putch                                 -2  0xfffffffe (PmmC func) args[1] r=0  (usage 3)
+putnum                                -7  0xfffffff9 (PmmC func) args[2] r=1  (usage 3)
+putstr                                -9  0xfffffff7 (PmmC func) args[1] r=1  (usage 9)
 RAND                                 -19  0xffffffed (PmmC func) args[0] r=1  (not used)
 RANDOM_HI                             33  0x00000021 (const dword)  (not used)
 RANDOM_LO                             32  0x00000020 (const dword)  (not used)
@@ -4508,7 +4505,7 @@ TMR4                                  40  0x00000028 (const dword)  (not used)
 TMR5                                  41  0x00000029 (const dword)  (not used)
 TMR6                                  42  0x0000002a (const dword)  (not used)
 TMR7                                  43  0x0000002b (const dword)  (not used)
-to                                    -5  0xfffffffb (PmmC func) args[1] r=1  (usage 18)
+to                                    -5  0xfffffffb (PmmC func) args[1] r=1  (usage 9)
 tolower                             -212  0xffffff2c (PmmC func) args[1] r=1  (not used)
 TOMATO                             64264  0x0000fb08 (const dword)  (not used)
 TOP_POS                                3  0x00000003 (const dword)  (not used)

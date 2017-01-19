@@ -342,9 +342,6 @@ func FormCounter()
             if(buttonState == iTransmitButton)
                 img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iTransmitButton);
-                to(COM0); putstr("Current Count: ");
-                to(COM0); putnum(DEC, count);
-                to(COM0); putch('\n');
             else
                 img_SetWord(hndl, iTransmitButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iTransmitButton);
