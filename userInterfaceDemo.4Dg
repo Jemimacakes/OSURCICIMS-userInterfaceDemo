@@ -47,6 +47,8 @@ func main()
     repeat
         if(reply == iCounterButton)
             reply := FormCounter();
+        else if(reply == iSquareButton)
+            reply := FormSquare();
         else
             reply := FormMain();
         endif
@@ -63,11 +65,15 @@ func FormMain()
     img_ClearAttributes(hndl, iCounterButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
     img_Show(hndl, iCounterButton);  // show button, only do this once
 
+    // SquareButton 1.0 generated 1/18/2017 3:15:48 PM
+    img_ClearAttributes(hndl, iSquareButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iSquareButton);  // show button, only do this once
+
     // StaticWelcomeText 1.0 generated 1/17/2017 7:17:20 PM
     img_Show(hndl,iStaticWelcomeText);
 
     // Statictext1 1.0 generated 1/17/2017 7:23:38 PM
-    img_Show(hndl,iStatictext1) ;
+    img_Show(hndl,iStatictext1);
 
     repeat
         touchState := touch_Get(TOUCH_STATUS);
@@ -78,6 +84,10 @@ func FormMain()
                 img_SetWord(hndl, iCounterButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iCounterButton);
             endif
+            if(buttonState == iSquareButton)
+                img_SetWord(hndl, iSquareButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareButton);
+            endif
         endif
 
         if(touchState == TOUCH_RELEASED)
@@ -85,6 +95,12 @@ func FormMain()
                 img_SetWord(hndl, iCounterButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iCounterButton);
                 returnValue := iCounterButton;
+                goto exit;
+            endif
+            if(buttonState == iSquareButton)
+                img_SetWord(hndl, iSquareButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareButton);
+                returnValue := iSquareButton;
                 goto exit;
             endif
         endif
@@ -97,6 +113,13 @@ func FormMain()
                 img_SetWord(hndl, iCounterButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iCounterButton);
             endif
+            if(buttonState == iSquareButton)
+                img_SetWord(hndl, iSquareButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareButton);
+            else
+                img_SetWord(hndl, iSquareButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareButton);
+            endif
         endif
     forever
 
@@ -104,6 +127,7 @@ exit:
     pause(200);
 
     img_SetAttributes(hndl, iCounterButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iSquareButton, I_TOUCH_DISABLE);
 
     return returnValue;
 
@@ -395,6 +419,242 @@ exit:
     img_SetAttributes(hndl, iCounterBackButton, I_TOUCH_DISABLE);
 
     return returnValue;
+
+endfunc
+
+func FormSquare()
+
+    var touchState, buttonState;
+    var squareX := 0, squareY := 0;
+    var returnValue;
+
+redraw:
+    gfx_Cls();
+
+    // SquareXDecButton 1.0 generated 1/18/2017 3:10:21 PM
+    img_ClearAttributes(hndl, iSquareXDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iSquareXDecButton);  // show button, only do this once
+
+    // SquareXIncButton 1.0 generated 1/18/2017 3:10:26 PM
+    img_ClearAttributes(hndl, iSquareXIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iSquareXIncButton);  // show button, only do this once
+
+    // SquareYDecButton 1.0 generated 1/18/2017 3:10:30 PM
+    img_ClearAttributes(hndl, iSquareYDecButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iSquareYDecButton);  // show button, only do this once
+
+    // SquareYIncButton 1.0 generated 1/18/2017 3:10:32 PM
+    img_ClearAttributes(hndl, iSquareYIncButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iSquareYIncButton);  // show button, only do this once
+
+    // SquareDrawButton 1.0 generated 1/18/2017 3:10:52 PM
+    img_ClearAttributes(hndl, iSquareDrawButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iSquareDrawButton);  // show button, only do this once
+
+    // SquareBackButton 1.0 generated 1/18/2017 3:11:01 PM
+    img_ClearAttributes(hndl, iSquareBackButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iSquareBackButton);  // show button, only do this once
+
+    // SquareXDigits 1.0 generated 1/18/2017 3:12:10 PM
+    img_Show(hndl, iSquareXDigits);  // show all digits at 0, only do this once
+    ledDigitsDisplay(squareX, iSquareXDigits+1, 100, 4, 1, 30, 0);
+
+    // SquareYDigits 1.0 generated 1/18/2017 3:12:13 PM
+    img_Show(hndl, iSquareYDigits);  // show all digits at 0, only do this once
+    ledDigitsDisplay(squareY, iSquareYDigits+1, 100, 4, 1, 30, 0);
+
+    // SquareTitleText 1.0 generated 1/18/2017 3:12:20 PM
+    img_Show(hndl,iSquareTitleText) ;
+
+    // SquareXText 1.0 generated 1/18/2017 3:12:31 PM
+    img_Show(hndl,iSquareXText) ;
+
+    // SquareYText 1.0 generated 1/18/2017 3:12:34 PM
+    img_Show(hndl,iSquareYText) ;
+
+    repeat
+        touchState := touch_Get(TOUCH_STATUS);
+        buttonState := img_Touched(hndl, -1);
+
+        if(touchState == TOUCH_PRESSED)
+            if(buttonState == iSquareXDecButton)
+                img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareXDecButton);
+                if(squareX != 0)
+                    squareX--;
+                else
+                    squareX := 320;
+                endif
+            endif
+            if(buttonState == iSquareXIncButton)
+                img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareXIncButton);
+                if(squareX != 320)
+                    squareX++;
+                else
+                    squareX := 0;
+                endif
+            endif
+            if(buttonState == iSquareYDecButton)
+                img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareYDecButton);
+                if(squareY != 0)
+                    squareY--;
+                else
+                    squareY := 240;
+                endif
+            endif
+            if(buttonState == iSquareYIncButton)
+                img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareYIncButton);
+                if(squareY != 240)
+                    squareY++;
+                else
+                    squareY := 0;
+                endif
+            endif
+            if(buttonState == iSquareDrawButton)
+                img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareDrawButton);
+            endif
+            if(buttonState == iSquareBackButton)
+                img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareBackButton);
+            endif
+        endif
+
+        if(touchState == TOUCH_RELEASED)
+            if(buttonState == iSquareXDecButton)
+                img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareXDecButton);
+            endif
+            if(buttonState == iSquareXIncButton)
+                img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareXIncButton);
+            endif
+            if(buttonState == iSquareYDecButton)
+                img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareYDecButton);
+            endif
+            if(buttonState == iSquareYIncButton)
+                img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareYIncButton);
+            endif
+            if(buttonState == iSquareDrawButton)
+                img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareDrawButton);
+                FormDrawSquare(squareX, squareY);
+                goto redraw;
+            endif
+            if(buttonState == iSquareBackButton)
+                img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareBackButton);
+                returnValue := iSquareBackButton;
+                goto exit;
+            endif
+        endif
+
+        if(touchState == TOUCH_MOVING)
+            if(buttonState == iSquareXDecButton)
+                img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareXDecButton);
+                if(squareX != 0)
+                    squareX--;
+                else
+                    squareX := 320;
+                endif
+            else
+                img_SetWord(hndl, iSquareXDecButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareXDecButton);
+            endif
+            if(buttonState == iSquareXIncButton)
+                img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareXIncButton);
+                if(squareX != 320)
+                    squareX++;
+                else
+                    squareX := 0;
+                endif
+            else
+                img_SetWord(hndl, iSquareXIncButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareXIncButton);
+            endif
+            if(buttonState == iSquareYDecButton)
+                img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareYDecButton);
+                if(squareY != 0)
+                    squareY--;
+                else
+                    squareY := 240;
+                endif
+            else
+                img_SetWord(hndl, iSquareYDecButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareYDecButton);
+            endif
+            if(buttonState == iSquareYIncButton)
+                img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareYIncButton);
+                if(squareY != 240)
+                    squareY++;
+                else
+                    squareY := 0;
+                endif
+            else
+                img_SetWord(hndl, iSquareYIncButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareYIncButton);
+            endif
+            if(buttonState == iSquareDrawButton)
+                img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareDrawButton);
+            else
+                img_SetWord(hndl, iSquareDrawButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareDrawButton);
+            endif
+            if(buttonState == iSquareBackButton)
+                img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iSquareBackButton);
+            else
+                img_SetWord(hndl, iSquareBackButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iSquareBackButton);
+            endif
+        endif
+
+         ledDigitsDisplay(squareX, iSquareXDigits+1, 100, 4, 1, 30, 0);
+         ledDigitsDisplay(squareY, iSquareYDigits+1, 100, 4, 1, 30, 0);
+    forever
+
+exit:
+    pause(200);
+
+    img_SetAttributes(hndl, iSquareXDecButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iSquareXIncButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iSquareYDecButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iSquareYIncButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iSquareDrawButton, I_TOUCH_DISABLE);
+    img_SetAttributes(hndl, iSquareBackButton, I_TOUCH_DISABLE);
+
+    return returnValue;
+
+endfunc
+
+func FormDrawSquare(var squareX, var squareY)
+
+    var touchState;
+    gfx_Cls();
+    gfx_RectangleFilled(squareX, squareY, 0, 0, ORANGE);
+
+    repeat
+        touchState := touch_Get(TOUCH_STATUS);
+
+        if(touchState == TOUCH_RELEASED)
+            goto exit;
+        endif
+    forever
+
+exit:
+    pause(200);
+
+    return;
 
 endfunc
 

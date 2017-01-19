@@ -1,4 +1,4 @@
-// File generated 1/17/2017 7:23:50 PM
+// File generated 1/18/2017 4:05:40 PM
 // Warning! This is a generated file, any manual changes will be
 // lost during the next generation.
 
@@ -24,6 +24,20 @@
     iCounterButton  // offset 0x528600
     iStaticWelcomeText // offset 0x52D200
     iStatictext1    // offset 0x52FE00
+    iSquareButton   // offset 0x531E00
+    iSquareXDecButton // offset 0x536A00
+    iSquareXIncButton // offset 0x537E00
+    iSquareYDecButton // offset 0x539200
+    iSquareYIncButton // offset 0x53A600
+    iSquareXDigits  // offset 0x53BA00
+    iiSquareXDigits // offset 0x53DC00
+    iSquareYDigits  // offset 0x543000
+    iiSquareYDigits // offset 0x545200
+    iSquareXText    // offset 0x54A600
+    iSquareYText    // offset 0x54B800
+    iSquareTitleText // offset 0x54CA00
+    iSquareDrawButton // offset 0x54F800
+    iSquareBackButton // offset 0x553A00
 #END
 
 #IFNOT EXISTS NOGLOBALS
