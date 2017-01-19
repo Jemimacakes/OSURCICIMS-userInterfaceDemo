@@ -2,7 +2,7 @@
 ==============================================================
 4DGL Compiler 2.8.0.5 -- Copyright 2004-2015 4D Labs
 ** C:\Users\Jemim\Documents\GitHub\OSURCICIMS-userInterfaceDemo\userInterfaceDemo.4dg
-compiled Wed Jan 18 16:07:26 2017
+compiled Wed Jan 18 16:25:02 2017
 
 ==============================================================
 ==============================================================
@@ -10,38 +10,44 @@ compiled Wed Jan 18 16:07:26 2017
 
 No Ref for file
 [LINKING]
-function 6, FormDrawSquare, address 82
+function 7, FormLCDTest, address 82
+stack usage 4 + 4
+function 'FormLCDTest' requires no arguments
+function 'FormLCDTest' has no return value
+
+[LINKING]
+function 6, FormDrawSquare, address 128
 stack usage 2 + 4
 function 'FormDrawSquare' requires 2 argument
 function 'FormDrawSquare' has no return value
 
 [LINKING]
-function 5, FormSquare, address 139
+function 5, FormSquare, address 185
 stack usage 10 + 4
 function 'FormSquare' requires no arguments
 function 'FormSquare' returns a value
 
 [LINKING]
-function 4, FormCounter, address 1499
+function 4, FormCounter, address 1545
 stack usage 14 + 4
 function 'FormCounter' requires no arguments
 function 'FormCounter' returns a value
 
 [LINKING]
-function 3, FormMain, address 3486
+function 3, FormMain, address 3532
 stack usage 6 + 4
 function 'FormMain' requires no arguments
 function 'FormMain' returns a value
 
 [LINKING]
-function 2, main, address 3907
+function 2, main, address 4107
 (main entry point)
 stack usage 70 + 4
 function 'main' requires no arguments
 function 'main' has no return value
 
 [LINKING]
-function 1, ledDigitsDisplay, address 4090
+function 1, ledDigitsDisplay, address 4309
 stack usage 8 + 4
 function 'ledDigitsDisplay' requires 7 argument
 function 'ledDigitsDisplay' has no return value
@@ -113,7 +119,7 @@ __MAXPROG                         00003840      14400  (usage 1)
 BAUD_57600                        0000000C         12  (usage 3)
 COM0                              0000F804      63492  (usage 18)
 DEC                               0000050A       1290  (usage 6)
-I_TOUCH_DISABLE                   00000020         32  (usage 96)
+I_TOUCH_DISABLE                   00000020         32  (usage 99)
 iCountDecButton                   0000000C         12  (usage 42)
 iCounterBackButton                00000010         16  (usage 45)
 iCounterButton                    00000011         17  (usage 48)
@@ -125,22 +131,23 @@ iCountText                        0000000F         15  (usage 3)
 iIncDecButton                     00000006          6  (usage 42)
 iIncIncButton                     00000007          7  (usage 42)
 iIncrementByText                  0000000E         14  (usage 3)
+iLCDTestButton                    00000015         21  (usage 45)
 iLeddigits1                       00000008          8  (usage 9)
 iLeddigits2                       0000000A         10  (usage 9)
-IMAGE_INDEX                       00000009          9  (usage 213)
+IMAGE_INDEX                       00000009          9  (usage 225)
 IMAGE_XPOS                        00000002          2  (usage 3)
-iSquareBackButton                 00000021         33  (usage 45)
+iSquareBackButton                 00000022         34  (usage 45)
 iSquareButton                     00000014         20  (usage 48)
-iSquareDrawButton                 00000020         32  (usage 42)
-iSquareTitleText                  0000001F         31  (usage 3)
-iSquareXDecButton                 00000015         21  (usage 42)
-iSquareXDigits                    00000019         25  (usage 9)
-iSquareXIncButton                 00000016         22  (usage 42)
-iSquareXText                      0000001D         29  (usage 3)
-iSquareYDecButton                 00000017         23  (usage 42)
-iSquareYDigits                    0000001B         27  (usage 9)
-iSquareYIncButton                 00000018         24  (usage 42)
-iSquareYText                      0000001E         30  (usage 3)
+iSquareDrawButton                 00000021         33  (usage 42)
+iSquareTitleText                  00000020         32  (usage 3)
+iSquareXDecButton                 00000016         22  (usage 42)
+iSquareXDigits                    0000001A         26  (usage 9)
+iSquareXIncButton                 00000017         23  (usage 42)
+iSquareXText                      0000001E         30  (usage 3)
+iSquareYDecButton                 00000018         24  (usage 42)
+iSquareYDigits                    0000001C         28  (usage 9)
+iSquareYIncButton                 00000019         25  (usage 42)
+iSquareYText                      0000001F         31  (usage 3)
 iStartButton                      00000003          3  (usage 42)
 iStatictext1                      00000013         19  (usage 3)
 iStaticWelcomeText                00000012         18  (usage 3)
@@ -152,40 +159,41 @@ PICASO                            00000001          1  (usage 3)
 TOUCH_ENABLE                      00000000          0  (usage 3)
 TOUCH_MOVING                      00000003          3  (usage 9)
 TOUCH_PRESSED                     00000001          1  (usage 9)
-TOUCH_RELEASED                    00000002          2  (usage 12)
-TOUCH_STATUS                      00000000          0  (usage 12)
+TOUCH_RELEASED                    00000002          2  (usage 15)
+TOUCH_STATUS                      00000000          0  (usage 15)
 
 [PmmC FUNCTIONS]
 com_TXbuffer                      FFFFFF82        -126  args=3 r=0  (usage 3)
 file_LoadImageControl             FFFFFF04        -252  args=3 r=1  (usage 3)
 file_Mount                        FFFFFF03        -253  args=0 r=1  (usage 6)
-gfx_Cls                           FFFFFFCD         -51  args=0 r=0  (usage 18)
+gfx_Cls                           FFFFFFCD         -51  args=0 r=0  (usage 21)
 gfx_RectangleFilled               FFFFFFC4         -60  args=5 r=0  (usage 3)
 gfx_ScreenMode                    FFFFFF9E         -98  args=1 r=1  (usage 3)
-img_ClearAttributes               FFFFFF45        -187  args=3 r=1  (usage 48)
+img_ClearAttributes               FFFFFF45        -187  args=3 r=1  (usage 51)
 img_SetAttributes                 FFFFFF46        -186  args=3 r=1  (usage 48)
-img_SetWord                       FFFFFF49        -183  args=4 r=1  (usage 216)
-img_Show                          FFFFFF47        -185  args=2 r=1  (usage 294)
+img_SetWord                       FFFFFF49        -183  args=4 r=1  (usage 228)
+img_Show                          FFFFFF47        -185  args=2 r=1  (usage 309)
 img_Touched                       FFFFFF44        -188  args=2 r=1  (usage 9)
-pause                             FFFFFFFA          -6  args=1 r=0  (usage 18)
+pause                             FFFFFFFA          -6  args=1 r=0  (usage 21)
 putch                             FFFFFFFE          -2  args=1 r=0  (usage 6)
 putnum                            FFFFFFF9          -7  args=2 r=1  (usage 6)
 putstr                            FFFFFFF7          -9  args=1 r=1  (usage 12)
 serin                             FFFFFFFF          -1  args=0 r=1  (usage 3)
 setbaud                           FFFFFFFC          -4  args=1 r=0  (usage 3)
 to                                FFFFFFFB          -5  args=1 r=1  (usage 18)
-touch_Get                         FFFFFF37        -201  args=1 r=1  (usage 12)
+touch_Get                         FFFFFF37        -201  args=1 r=1  (usage 15)
 touch_Set                         FFFFFF38        -200  args=1 r=0  (usage 3)
 
 [USER FUNCTIONS]
-FormCounter                       000005DB  args=0 r=0  (usage 3)
-FormDrawSquare                    00000052  args=2 r=0  (usage 3)
-FormMain                          00000D9E  args=0 r=0  (usage 6)
-FormSquare                        0000008B  args=0 r=0  (usage 3)
-ledDigitsDisplay                  00000FFA  args=7 r=0  (usage 24)
+FormCounter                       00000609  args=0 r=0  (usage 3)
+FormDrawSquare                    00000080  args=2 r=0  (usage 3)
+FormLCDTest                       00000052  args=0 r=0  (usage 3)
+FormMain                          00000DCC  args=0 r=0  (usage 6)
+FormSquare                        000000B9  args=0 r=0  (usage 3)
+ledDigitsDisplay                  000010D5  args=7 r=0  (usage 24)
 
 [GLOBAL VARIABLES]
-hndl                                   1  word       (usage 618)
+hndl                                   1  word       (usage 648)
 
 [PRIVATE VARIABLES]
 
@@ -204,7 +212,7 @@ hndl                                   1  word       (usage 618)
 [PROGRAM]
 main
 [CODESIZE]
-4287
+4506
 [MEMSIZE]
 1
 [ARGCOUNT]
@@ -214,7 +222,7 @@ NO
 [STACKSIZE]
 0 (AUTO)
 [STACK_ESTIMATE]
-134   (nb:- worst case estimate)
+142   (nb:- worst case estimate)
 [MODE]
 0
 

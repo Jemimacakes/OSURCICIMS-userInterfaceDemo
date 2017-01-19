@@ -1,6 +1,7 @@
-linked : 6     FormDrawSquare 0052
-linked : 5     FormSquare 008B
-linked : 4     FormCounter 05DB
-linked : 3     FormMain 0D9E
-linked : 2     main 0F43
-linked : 1     ledDigitsDisplay 0FFA
+linked : 7     FormLCDTest 0052
+linked : 6     FormDrawSquare 0080
+linked : 5     FormSquare 00B9
+linked : 4     FormCounter 0609
+linked : 3     FormMain 0DCC
+linked : 2     main 100B
+linked : 1     ledDigitsDisplay 10D5

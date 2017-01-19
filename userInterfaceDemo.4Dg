@@ -49,6 +49,8 @@ func main()
             reply := FormCounter();
         else if(reply == iSquareButton)
             reply := FormSquare();
+        else if(reply == iLCDTestButton)
+            reply := FormLCDTest();
         else
             reply := FormMain();
         endif
@@ -69,6 +71,10 @@ func FormMain()
     img_ClearAttributes(hndl, iSquareButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
     img_Show(hndl, iSquareButton);  // show button, only do this once
 
+    // LCDTestButton 1.0 generated 1/18/2017 4:21:32 PM
+    img_ClearAttributes(hndl, iLCDTestButton, I_TOUCH_DISABLE); // set to enable touch, only need to do this once
+    img_Show(hndl, iLCDTestButton);  // show button, only do this once
+
     // StaticWelcomeText 1.0 generated 1/17/2017 7:17:20 PM
     img_Show(hndl,iStaticWelcomeText);
 
@@ -88,6 +94,10 @@ func FormMain()
                 img_SetWord(hndl, iSquareButton, IMAGE_INDEX, 1);
                 img_Show(hndl, iSquareButton);
             endif
+            if(buttonState == iLCDTestButton)
+                img_SetWord(hndl, iLCDTestButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iLCDTestButton);
+            endif
         endif
 
         if(touchState == TOUCH_RELEASED)
@@ -98,9 +108,15 @@ func FormMain()
                 goto exit;
             endif
             if(buttonState == iSquareButton)
-                img_SetWord(hndl, iSquareButton, IMAGE_INDEX, 1);
+                img_SetWord(hndl, iSquareButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iSquareButton);
                 returnValue := iSquareButton;
+                goto exit;
+            endif
+            if(buttonState == iLCDTestButton)
+                img_SetWord(hndl, iLCDTestButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iLCDTestButton);
+                returnValue := iLCDTestButton;
                 goto exit;
             endif
         endif
@@ -119,6 +135,13 @@ func FormMain()
             else
                 img_SetWord(hndl, iSquareButton, IMAGE_INDEX, 0);
                 img_Show(hndl, iSquareButton);
+            endif
+            if(buttonState == iLCDTestButton)
+                img_SetWord(hndl, iLCDTestButton, IMAGE_INDEX, 1);
+                img_Show(hndl, iLCDTestButton);
+            else
+                img_SetWord(hndl, iLCDTestButton, IMAGE_INDEX, 0);
+                img_Show(hndl, iLCDTestButton);
             endif
         endif
     forever
@@ -647,6 +670,28 @@ func FormDrawSquare(var squareX, var squareY)
         touchState := touch_Get(TOUCH_STATUS);
 
         if(touchState == TOUCH_RELEASED)
+            goto exit;
+        endif
+    forever
+
+exit:
+    pause(200);
+
+    return;
+
+endfunc
+
+func FormLCDTest()
+
+    var touchState;
+    var returnValue;
+    gfx_Cls();
+
+    repeat
+        touchState := touch_Get(TOUCH_STATUS);
+
+        if(touchState == TOUCH_RELEASED)
+            returnValue == 0;
             goto exit;
         endif
     forever
